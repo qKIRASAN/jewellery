@@ -1,0 +1,14 @@
+{
+  "root": true,
+  "extends": [
+    "htmlacademy/es5",
+    "htmlacademy/es6"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2015,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "name": "jewellery",
+  "private": true,
+  "author": "K. Gadomskii",
+  "description": "CH jewellery shop demo project",
+  "devDependencies": {
+    "@htmlacademy/editorconfig-cli": "1.x",
+    "autoprefixer": "9.5.x",
+    "browser-sync": "2.26.x",
+    "del": "^4.1.1",
+    "eslint": "5.1.0",
+    "eslint-config-htmlacademy": "0.4.x",
+    "gulp": "4.0.x",
+    "gulp-csso": "^3.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-plumber": "1.2.x",
+    "gulp-postcss": "8.0.x",
+    "gulp-posthtml": "^3.0.5",
+    "gulp-remember": "^1.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.1.3",
+    "gulp-sass": "4.0.x",
+    "gulp-sourcemaps": "2.6.x",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-webp": "^4.0.1",
+    "html-validate": "5.5.0",
+    "posthtml-include": "^1.7.2",
+    "stylelint": "13.13.1",
+    "stylelint-config-htmlacademy": "0.1.x",
+    "stylelint-scss": "3.21.0",
+    "webpack-stream": "6.1.2"
+  },
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint \"source/scss/**/*.scss\" --fix --syntax scss",
+    "test": "npm run editorconfig && npm run stylelint && eslint source/js/**/*.js",
+    "build": "gulp build",
+    "start": "gulp",
+    "validate": "html-validate build/*.html"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ],
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "source/*.html",
+    "source/js/**/*.js",
+    "source/img/**/*.svg",
+    "source/scss/**/*.scss"
+  ],
+  "engines": {
+    "node": "14.15.5"
+  }
+}

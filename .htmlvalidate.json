@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "html-validate:recommended",
+    "html-validate:document"
+  ],
+
+  "rules": {
+    "close-order": "error",
+    "doctype-style": [
+      "warn",
+      {
+        "style": "lowercase"
+      }
+    ],
+    "require-sri": [
+      "error",
+      {
+        "target": "crossorigin"
+      }
+    ],
+    "void-style": [
+      "warn",
+      {
+        "style": "omit"
+      }
+    ]
+  }
+}
