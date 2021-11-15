@@ -1,0 +1,72 @@
+.auth {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.auth__login,
+.auth__cart {
+  margin-bottom: 10px;
+  margin-left: 35px;
+  font-size: 14px;
+  color: $extra-black;
+}
+
+.auth__login {
+  @media (max-width: $large) {
+    display: none;
+  }
+}
+
+.auth__cart {
+  @media (max-width: $large) {
+    margin: 0;
+    color: $basic-white;
+  }
+
+  span {
+    @media (max-width: $large) {
+      display: none;
+    }
+  }
+
+  svg {
+    display: none;
+
+    @media (max-width: $large) {
+      display: block;
+    }
+  }
+}
+
+.auth__login[href]:hover,
+.auth__cart[href]:hover,
+.auth__login[href]:focus,
+.auth__cart[href]:focus {
+  color: $primary;
+
+  @media (max-width: $large) {
+    color: rgba($extra-black, 0.65);
+  }
+}
+
+.auth__login[href]:focus,
+.auth__cart[href]:focus {
+  outline: 1px solid $primary;
+  outline-offset: 2px;
+  border-radius: 2px;
+
+  @media (max-width: $large) {
+    outline-color: rgba($extra-black, 0.65);
+  }
+}
+
+.auth__login[href]:active,
+.auth__cart[href]:active {
+  color: darken($primary, 15%);
+  outline: none;
+
+  @media (max-width: $large) {
+    color: rgba($extra-black, 0.45);
+  }
+}

@@ -1,0 +1,19 @@
+//Base
+@import "base/variables";
+@import "base/fonts";
+@import "base/global";
+@import "base/visually-hidden";
+@import "mixin/reset-list.scss";
+
+//Blocks
+@import "blocks/page.scss";
+@import "blocks/icon.scss";
+@import "blocks/burger.scss";
+@import "blocks/search.scss";
+@import "blocks/form-search.scss";
+@import "blocks/logo.scss";
+@import "blocks/auth.scss";
+@import "blocks/lead.scss";
+@import "blocks/nav.scss";
+@import "blocks/header.scss";
+@import "blocks/menu.scss";

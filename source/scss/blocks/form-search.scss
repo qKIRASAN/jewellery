@@ -1,0 +1,111 @@
+.form-search__field {
+  position: relative;
+  display: flex;
+  margin-bottom: 15px;
+
+  @media (min-width: $large + 1) {
+    max-width: 200px;
+  }
+
+  input {
+    display: block;
+    order: 2;
+    margin: 0;
+    padding: 3px 13px 3px 29px;
+    width: 100%;
+    font-weight: inherit;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: inherit;
+    color: $extra-black;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    appearance: none;
+
+    @media (max-width: $large) {
+      padding: 9px 13px 9px 36px;
+      color: $basic-white;
+      background-color: rgba($basic-white, 0.15);
+      border-radius: 21px;
+    }
+
+    &::-webkit-search-cancel-button {
+      appearance: none;
+    }
+
+    &::-webkit-input-placeholder,
+    &::placeholder {
+      color: $secondary;
+      opacity: 1;
+
+      @media (max-width: $large) {
+        color: $basic-white;
+      }
+    }
+  }
+
+  label {
+    position: absolute;
+    visibility: hidden;
+    top: 3px;
+    left: 29px;
+    font-size: 14px;
+    color: $secondary;
+
+    @media (max-width: $large) {
+      top: 9px;
+      left: 36px;
+      color: $basic-white;
+    }
+  }
+
+  button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    @media (max-width: $large) {
+      left: 12px;
+    }
+  }
+}
+
+.form-search__field:hover {
+  outline: 1px solid $secondary;
+  outline-offset: 4px;
+  border-radius: 4px;
+
+  @media (max-width: $large) {
+    outline-color: rgba($extra-black, 0.65);
+    border-radius: 21px;
+  }
+}
+
+.form-search__field:active {
+  outline-color: darken($secondary, 15%);
+
+  @media (max-width: $large) {
+    outline-color: rgba($extra-black, 0.45);
+    border-radius: 21px;
+  }
+}
+
+.form-search__field input:focus {
+  outline: 1px solid $extra-black;
+  outline-offset: 4px;
+  border-radius: 4px;
+
+  @media (max-width: $large) {
+    border-radius: 21px;
+  }
+}
+
+.form-search__field input:focus + label {
+  visibility: visible;
+  top: -20px;
+  left: 0;
+  font-size: 10px;
+  transition: all 0.5s ease;
+}

@@ -1,0 +1,135 @@
+.nav {
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  @media (max-width: $large) {
+    padding-top: 30px;
+    padding-bottom: 35px;
+  }
+
+  @media (max-width: $medium) {
+    padding-top: 20px;
+    padding-bottom: 15px;
+  }
+}
+
+.nav__list {
+  color: $extra-black;
+
+  @media (min-width: $large + 1) {
+    display: none;
+  }
+
+  @media (max-width: $large) {
+    color: $basic-white;
+    margin-bottom: 44px;
+  }
+
+  @media (max-width: $medium) {
+    margin-bottom: 34px;
+  }
+
+  @include reset-list;
+}
+
+.nav__list:first-child {
+  @media (min-width: $large + 1) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @media (max-width: $large) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: $medium) {
+    margin-bottom: 30px;
+  }
+}
+
+.nav__item {
+  margin-left: 25px;
+
+  @media (max-width: $large) {
+    margin-bottom: 21px;
+    margin-left: 0;
+  }
+}
+
+.nav__item:first-child {
+  @media (min-width: $large + 1) {
+    margin-left: 10px;
+  }
+}
+
+.nav__list--small .nav__item {
+  @media (max-width: $large) {
+    margin-bottom: 15px;
+  }
+}
+
+.nav__link {
+  display: inline-block;
+  vertical-align: baseline;
+  padding: 3px 5px;
+  color: inherit;
+
+  @media (max-width: $large) {
+    padding: 0;
+    font-size: 24px;
+  }
+}
+
+.nav__list--small .nav__link {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 18px;
+  line-height: 23px;
+  opacity: 0.75;
+}
+
+.nav__login {
+  display: none;
+
+  @media (max-width: $large) {
+    display: inline-block;
+    vertical-align: baseline;
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 23px;
+    color: $basic-white;
+  }
+}
+
+.nav__link[href]:hover,
+.nav__login[href]:hover,
+.nav__link[href]:focus,
+.nav__login[href]:focus {
+  color: $primary;
+
+  @media (max-width: $large) {
+    color: rgba($extra-black, 0.65);
+  }
+}
+
+.nav__link[href]:focus,
+.nav__login[href]:focus {
+  outline: 1px solid $primary;
+  outline-offset: 2px;
+  border-radius: 2px;
+
+  @media (max-width: $large) {
+    outline-color: rgba($extra-black, 0.65);
+  }
+}
+
+.nav__link[href]:active,
+.nav__login[href]:active {
+  color: darken($primary, 15%);
+  outline: none;
+
+  @media (max-width: $large) {
+    color: rgba($extra-black, 0.45);
+  }
+}

@@ -1,0 +1,35 @@
+.burger {
+  display: none;
+
+  @media (max-width: $large) {
+    display: block;
+    margin: auto;
+    padding: 0;
+    width: 25px;
+    height: 28px;
+    color: $basic-white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &--no-js {
+      visibility: hidden;
+    }
+  }
+}
+
+.burger:hover,
+.burger:focus {
+  color: rgba($extra-black, 0.65);
+}
+
+.burger:focus {
+  outline: 1px solid rgba($extra-black, 0.65);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.burger:active {
+  color: rgba($extra-black, 0.45);
+  outline: none;
+}

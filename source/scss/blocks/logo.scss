@@ -1,0 +1,49 @@
+.logo {
+  color: $primary;
+
+  @media (max-width: $large) {
+    color: $basic-white;
+  }
+
+  @media (max-width: $medium) {
+    width: 52px;
+    height: 52px;
+  }
+
+  svg {
+    margin: auto;
+
+    @media (max-width: $medium) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.logo[href]:hover,
+.logo[href]:focus {
+  color: darken($primary, 30%);
+
+  @media (max-width: $large) {
+    color: rgba($extra-black, 0.65);
+  }
+}
+
+.logo[href]:focus {
+  outline: 1px solid darken($primary, 30%);
+  outline-offset: 2px;
+  border-radius: 2px;
+
+  @media (max-width: $large) {
+    outline-color: rgba($extra-black, 0.65);
+  }
+}
+
+.logo[href]:active {
+  color: darken($primary, 15%);
+  outline: none;
+
+  @media (max-width: $large) {
+    color: rgba($extra-black, 0.45);
+  }
+}
