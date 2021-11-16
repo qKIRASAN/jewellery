@@ -14,7 +14,23 @@
 </head>
 <body class="page__body">
   <include src="includes/header.html"></include>
-  <main></main>
+  <main>
+    <h1 class="visually-hidden">
+      CH Jewellery shop. Main page
+    </h1>
+    <section class="intro intro--wide">
+      <include src="includes/intro.html">
+        {
+            "img": "necklace",
+            "width": "1366",
+            "height": "463",
+            "alt": "ruby necklace shot close-up",
+            "title": "perfection",
+            "description": "made to be yours"
+        }
+      </include>
+    </section>
+  </main>
   <include src="includes/footer.html"></include>
   <script src="./js/main.js"></script>
 </body>

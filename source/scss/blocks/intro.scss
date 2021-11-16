@@ -1,0 +1,59 @@
+.intro {
+  position: relative;
+  font-family: $cormorant-garamond;
+  color: $basic-white;
+  background-color: rgba($basic-brown, 0.7);
+  text-align: center;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
+    z-index: $z-index-background;
+  }
+
+  &--wide {
+    padding-top: 150px;
+    padding-bottom: 50px;
+    min-height: 463px;
+
+    h2 {
+      margin: 30px auto 0;
+      font-weight: 700;
+      font-size: 45px;
+      line-height: 58px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+
+      @media (min-width: $medium + 1) and (max-width: $large) {
+        padding-right: 18px;
+      }
+
+      @media (max-width: $medium) {
+        margin-top: 38px;
+        font-size: 38px;
+        line-height: 49px;
+      }
+    }
+
+    p {
+      margin: -5px auto 15px;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 38px;
+      line-height: 49px;
+
+      @media (min-width: $medium + 1) and (max-width: $large) {
+        padding-right: 19px;
+      }
+
+      @media (max-width: $medium) {
+        margin-top: -7px;
+        font-size: 34px;
+        line-height: 44px;
+      }
+    }
+  }
+}
