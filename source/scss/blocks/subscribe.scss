@@ -1,0 +1,38 @@
+.subscribe {
+  display: flex;
+  margin: auto;
+  padding: 0 4px;
+  font-weight: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 21px;
+  color: $basic-white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  span,
+  svg {
+    margin: auto;
+  }
+
+  span {
+    margin-right: 12px;
+  }
+}
+
+.subscribe:hover,
+.subscribe:focus {
+  color: $secondary;
+}
+
+.subscribe:focus {
+  outline: 1px solid $secondary;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.subscribe:active {
+  color: darken($secondary, 15%);
+  outline: none;
+}

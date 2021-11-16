@@ -1,0 +1,173 @@
+.footer {
+  color: $basic-white;
+  background-color: $basic-black;
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 61px;
+  padding-bottom: 74px;
+
+  @media (max-width: $large) {
+    padding-top: 21px;
+    padding-bottom: 36px;
+  }
+
+  @media (max-width: $medium) {
+    padding-bottom: 22px;
+  }
+}
+
+.footer__form {
+  flex-basis: 42.75%;
+  margin-right: calc(3.9%);
+  min-width: 415px;
+
+  @media (max-width: $large) {
+    flex-basis: 82.6%;
+    margin-bottom: 44px;
+    max-width: 740px;
+  }
+
+  @media (max-width: $medium) {
+    flex-basis: 100%;
+    margin-right: auto;
+    min-width: unset;
+    max-width: 560px;
+  }
+}
+
+.footer__nav-list {
+  @include reset-list;
+
+  @media (min-width: $large + 1) {
+    padding-top: 34px;
+  }
+
+  @media (max-width: $medium) {
+    margin-bottom: 20px;
+  }
+
+  &--service {
+    flex: 0 1 180px;
+    margin-right: 15px;
+    margin-left: auto;
+
+    @media (max-width: $large) {
+      margin-right: calc(11%);
+      margin-left: 0;
+    }
+  }
+
+  &--about {
+    flex: 0 1 130px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (max-width: $large) {
+      margin-right: calc(11%);
+      margin-left: 0;
+    }
+
+    @media (max-width: $medium) {
+      flex-basis: 132px;
+      margin-bottom: 26px;
+    }
+  }
+
+  &--social {
+    flex: 0 1 115px;
+    margin-left: auto;
+
+    @media (max-width: $large) {
+      margin-right: auto;
+      margin-left: 0;
+    }
+
+    @media (max-width: $medium) {
+      flex: 0 1 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      max-width: 600px;
+    }
+  }
+}
+
+.footer__nav-item {
+  margin-bottom: 18px;
+
+  &--social {
+    @media (max-width: $medium) {
+      margin-right: 30px;
+    }
+  }
+}
+
+.footer__nav-link {
+  color: $basic-white;
+
+  &--social {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &--fb {
+    @media (max-width: $medium) {
+      width: 12px;
+      height: 21px;
+    }
+  }
+
+  &--ig,
+  &--pt {
+    @media (max-width: $medium) {
+      width: 20px;
+      height: 21px;
+    }
+  }
+
+  &--tw {
+    @media (max-width: $medium) {
+      width: 20px;
+      height: 18px;
+    }
+  }
+
+  svg,
+  span {
+    margin: 0;
+  }
+
+  svg {
+    @media (max-width: $medium) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  span {
+    margin-left: 15px;
+
+    @media (max-width: $medium) {
+      display: none;
+    }
+  }
+}
+
+.footer__nav-link:hover,
+.footer__nav-link:focus {
+  color: $secondary;
+}
+
+.footer__nav-link:focus {
+  outline: 1px solid $secondary;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.footer__nav-link:active {
+  color: darken($secondary, 15%);
+  outline: none;
+}

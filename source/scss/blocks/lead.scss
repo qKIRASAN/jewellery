@@ -1,10 +1,6 @@
 .lead {
   display: flex;
   flex-wrap: wrap;
-  //
-  //@media (max-width: $large) {
-  //  color: $basic-white;
-  //}
 }
 
 .lead__burger {
@@ -12,10 +8,6 @@
   margin-bottom: auto;
   margin-left: 0;
   padding: 5px 0;
-
-  //@media (max-width: $large) {
-  //  color: inherit;
-  //}
 
   @media (max-width: $medium) {
     margin-top: 32px;
