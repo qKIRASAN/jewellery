@@ -1,0 +1,126 @@
+.products {
+  display: flex;
+  color: $extra-black;
+  overflow-x: scroll;
+
+  @include reset-list;
+}
+
+.products__item {
+  flex: 0 0 calc(100% / 4 - 22.5px);
+  margin-right: 30px;
+  padding-bottom: 20px;
+
+  @media (max-width: $large) {
+    flex: 0 0 calc(100% / 2 - 15px);
+  }
+
+  @media (max-width: $medium) {
+    flex: 0 0 calc(100% / 2 - 15px);
+    padding-bottom: 10px;
+  }
+}
+
+.products__item:last-child {
+  margin-right: 0;
+}
+
+.products__link {
+  position: relative;
+  display: block;
+  padding-bottom: 10px;
+  color: inherit;
+  outline: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    bottom: 2%;
+    left: 2%;
+    transition: transform 0.2s;
+    z-index: $z-index-base;
+  }
+
+  &::before {
+    border-top: 2px solid $primary;
+    border-bottom: 2px solid $primary;
+    transform: scaleX(0);
+  }
+
+  &::after {
+    border-right: 2px solid $primary;
+    border-left: 2px solid $primary;
+    transform: scaleY(0);
+  }
+
+  img {
+    object-fit: cover;
+    height: 100%;
+  }
+
+  h3 {
+    margin: 21px auto 6px;
+    font-weight: 500;
+    font-size: inherit;
+    line-height: 21px;
+    transition: transform 0.2s;
+    transform: translateY(0);
+
+    @media (max-width: $medium) {
+      margin-top: 16px;
+      min-height: 42px;
+    }
+  }
+
+  p {
+    margin: 6px auto;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    transition: transform 0.2s;
+    transform: translateY(0);
+  }
+}
+
+.products:focus {
+  outline: 1px solid $primary;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.products__link:hover img,
+.products__link:focus img {
+  opacity: 0.85;
+}
+
+.products__link:active img {
+  opacity: 0.95;
+}
+
+.products__link:hover h3,
+.products__link:focus h3,
+.products__link:hover p,
+.products__link:focus p {
+  color: rgba($extra-black, 0.85);
+  transform: translateY(-10px);
+}
+
+.products__link:active h3,
+.products__link:active p {
+  color: darken($extra-black, 15%);
+}
+
+.products__link:hover::before,
+.products__link:focus::before,
+.products__link:hover::after,
+.products__link:focus::after {
+  transform: scale(1);
+}
+
+.products__link:active::before,
+.products__link:active::after {
+  border-color: darken($primary, 15%);
+}

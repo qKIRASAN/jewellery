@@ -1,0 +1,89 @@
+.new {
+  padding-top: 110px;
+  padding-bottom: 50px;
+  text-align: center;
+
+  @media (max-width: $large) {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+
+  @media (max-width: $medium) {
+    padding-top: 50px;
+    padding-bottom: 25px;
+  }
+
+  h2 {
+    margin: 9px auto 19px;
+    padding: 0 45px;
+    font-weight: 700;
+    font-family: $cormorant-garamond;
+    font-size: 34px;
+    line-height: 44px;
+
+    @media (max-width: $large) {
+      margin-bottom: 14px;
+    }
+  }
+}
+
+.new__link {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 6px 6px 10px;
+  line-height: 21px;
+  color: $extra-black;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $primary;
+
+    @media (max-width: $large) {
+      bottom: -5px;
+    }
+  }
+}
+
+.new__inner {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  max-width: calc(100vw - 90px);
+
+  @media (max-width: $large) {
+    padding-top: 45px;
+    padding-bottom: 35px;
+  }
+
+  @media (max-width: $medium) {
+    padding-top: 35px;
+    padding-bottom: 30px;
+    max-width: calc(100vw - 30px);
+  }
+}
+
+.new__link[href]:hover,
+.new__link[href]:focus {
+  color: $primary;
+}
+
+.new__link[href]:focus {
+  outline: 1px solid $primary;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.new__link[href]:active {
+  color: darken($primary, 15%);
+  outline: none;
+}
+
+.new__link[href]:active::after {
+  background-color: darken($primary, 15%);
+}

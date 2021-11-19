@@ -1,0 +1,159 @@
+.slider {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+
+  &--pointer-events {
+    touch-action: pan-y;
+  }
+}
+
+.slider__items {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition-property: transform;
+  overflow-x: initial;
+}
+
+.slider__item {
+  max-width: 100%;
+  height: 100%;
+  transition-property: transform;
+}
+
+.slider__item:nth-child(4n + 4) {
+  @media (min-width: $large + 1) {
+    margin-right: 0;
+  }
+}
+
+.slider__item:nth-child(2n + 2) {
+  @media (max-width: $large) {
+    margin-right: 0;
+  }
+}
+
+.slider__pagination {
+  position: absolute;
+  bottom: 12px;
+  left: 50.6%;
+  transform: translateX(-50%);
+  display: flex;
+
+  @media (max-width: $large) {
+    bottom: 8px;
+    left: 51%;
+  }
+
+  @media (max-width: $medium) {
+    bottom: 2px;
+    left: 50%;
+  }
+
+  &--bullets {
+    color: $secondary;
+  }
+
+  &--fraction {
+    color: $extra-black;
+  }
+}
+
+.slider__bullet {
+  margin-right: 12px;
+  cursor: pointer;
+
+  @media (max-width: $large) {
+    margin-right: 13px;
+  }
+
+  &--active {
+    color: $extra-black;
+    cursor: auto;
+    pointer-events: none;
+  }
+}
+
+.slider__toggles {
+  display: block;
+
+  @media (max-width: $medium) {
+    display: none;
+  }
+}
+
+.slider__toggle {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: -55px;
+  border: none;
+  color: $primary;
+  background-color: transparent;
+  cursor: pointer;
+
+  @media (max-width: $large) {
+    top: -52px;
+    width: 36px;
+    height: 15px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &--prev {
+    left: -1px;
+  }
+
+  &--next {
+    right: -1px;
+  }
+
+  &--disabled {
+    opacity: 0.35;
+    cursor: auto;
+    pointer-events: none;
+  }
+}
+
+.slider__bullet:hover,
+.slider__bullet:focus {
+  color: $extra-black;
+}
+
+.slider__bullet:focus {
+  outline: 1px solid $extra-black;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.slider__bullet:active {
+  color: rgba($extra-black, 0.75);
+  outline: none;
+}
+
+.slider__toggle:hover,
+.slider__toggle:focus {
+  color: $extra-black;
+}
+
+.slider__toggle:focus {
+  outline: 1px solid $extra-black;
+  outline-offset: 4px;
+  border-radius: 4px;
+  //color: $primary;
+  //outline: 1px solid $primary;
+  //outline-offset: 4px;
+  //border-radius: 4px;
+}
+
+.slider__toggle:active {
+  //color: darken($primary, 15%);
+  //outline-color: darken($primary, 15%);
+  color: rgba($extra-black, 0.75);
+  outline: none;
+}
