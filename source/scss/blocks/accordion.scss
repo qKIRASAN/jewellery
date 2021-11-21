@@ -1,0 +1,19 @@
+.accordion .accordion__label {
+  padding-bottom: 44px;
+
+  @media (max-width: $medium) {
+    padding-bottom: 19px;
+  }
+}
+
+.accordion--visible .accordion__label {
+  padding-bottom: 0;
+}
+
+.accordion .accordion__content {
+  display: none;
+}
+
+.accordion--visible .accordion__content {
+  display: block;
+}

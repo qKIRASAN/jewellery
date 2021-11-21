@@ -1,0 +1,98 @@
+.toggle {
+  display: none;
+
+  &--button-down,
+  &--button-up {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    color: $primary;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: $z-index-base;
+
+    svg {
+      position: absolute;
+      top: 50px;
+      right: 48px;
+      width: 17px;
+      height: 10px;
+      transform: translateX(0);
+      transition: transform 0.2s ease;
+
+      @media (max-width: $large) {
+        right: 49px;
+        width: 23px;
+        height: 12px;
+      }
+
+      @media (max-width: $medium) {
+        top: 25px;
+        right: 24px;
+        width: 20px;
+        height: 10px;
+      }
+    }
+  }
+
+  &--button-up {
+    svg {
+      transform: rotateX(180deg);
+
+      @media (max-width: $large) {
+        top: 48px;
+      }
+
+      @media (max-width: $medium) {
+        top: 23px;
+      }
+    }
+  }
+}
+
+.toggle:hover,
+.toggle:focus {
+  color: $extra-black;
+
+  svg {
+    transform: translateX(5px);
+  }
+}
+
+.toggle:hover + p,
+.toggle:focus + p {
+  transform: translateX(5px);
+}
+
+.toggle--button-up:hover,
+.toggle--button-up:focus {
+  svg {
+    transform: rotateX(180deg) translateX(5px);
+  }
+}
+
+.toggle:active {
+  color: rgba($extra-black, 0.75);
+
+  svg {
+    transform: translateX(5px);
+  }
+}
+
+.toggle:active + p {
+  color: rgba($extra-black, 0.75);
+  transform: translateX(5px);
+}
+
+.toggle--button-up:active {
+  svg {
+    transform: rotateX(180deg) translateX(5px);
+  }
+}

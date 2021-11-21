@@ -145,15 +145,9 @@
   outline: 1px solid $extra-black;
   outline-offset: 4px;
   border-radius: 4px;
-  //color: $primary;
-  //outline: 1px solid $primary;
-  //outline-offset: 4px;
-  //border-radius: 4px;
 }
 
 .slider__toggle:active {
-  //color: darken($primary, 15%);
-  //outline-color: darken($primary, 15%);
   color: rgba($extra-black, 0.75);
   outline: none;
 }
