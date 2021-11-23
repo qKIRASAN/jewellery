@@ -23,10 +23,30 @@ const VALUE_FALSE = `false`;
 
 document.addEventListener(`DOMContentLoaded`, () => {
   const header = document.querySelector(`.${HEADER_CLASS}`);
+  if (!header) {
+    return;
+  }
+
   const logo = header.querySelector(`.${LOGO_CLASS}`);
+  if (!logo) {
+    return;
+  }
+
   const burger = header.querySelector(`.${BURGER_CLASS}`);
+  if (!burger) {
+    return;
+  }
+
   const cart = header.querySelector(`.${CART_CLASS}`);
+  if (!cart) {
+    return;
+  }
+
   const menuItems = header.querySelectorAll(`.${ITEMS_CLASS}`);
+  if (!menuItems) {
+    return;
+  }
+
   const headerFocusArea = createFocusArea(header);
 
   function addHandlers() {

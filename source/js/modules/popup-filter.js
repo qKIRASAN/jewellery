@@ -12,14 +12,29 @@ const POPUP_BUTTON_OPEN = `popup--open`;
 const POPUP_BUTTON_CLOSE = `form-filter__exit`;
 const POPUP_FORM = `popup__form-filter`;
 const FIELDSET_PRODUCT_TOGGLE = `toggle`;
-const SCREEN_WIDTH = 1024;
 const DISABLED = `disabled`;
 
 document.addEventListener(`DOMContentLoaded`, () => {
   const filter = document.querySelector(`.${CONTAINER}`);
+  if (!filter) {
+    return;
+  }
+
   const buttonOpen = filter.querySelector(`.${BUTTON_OPEN}`);
+  if (!buttonOpen) {
+    return;
+  }
+
   const buttonClose = filter.querySelector(`.${BUTTON_CLOSE}`);
+  if (!buttonClose) {
+    return;
+  }
+
   const form = filter.querySelector(`.${FORM_FILTER}`);
+  if (!form) {
+    return;
+  }
+
   const filterFocusArea = createFocusArea(filter);
 
   function addHandler() {
@@ -37,15 +52,15 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
     filter.addEventListener(`keydown`, hidePopup);
     filter.addEventListener(`click`, hidePopup);
+    filter.removeEventListener(`click`, showPopup);
     buttonOpen.removeEventListener(`click`, addHandler);
   }
 
   function hidePopup(evt) {
     const isButtonClose = evt.target.closest(`.${POPUP_BUTTON_CLOSE}`);
     const isForm = evt.target.closest(`.${POPUP_FORM}`);
-    const isNotDesktopWidth = window.innerWidth < SCREEN_WIDTH;
 
-    if (isEscEvent(evt) || evt.type === `click` && isNotDesktopWidth) {
+    if (isEscEvent(evt) || evt.type === `click`) {
       if (evt.type === `click` && isForm && !isButtonClose) {
         return;
       }
@@ -60,6 +75,18 @@ document.addEventListener(`DOMContentLoaded`, () => {
       filter.removeEventListener(`keydown`, hidePopup);
       filter.removeEventListener(`click`, hidePopup);
     }
+  }
+
+  function restore() {
+    filter.classList.remove(POPUP_BUTTON_OPEN);
+    buttonOpen.classList.remove(BUTTON_OPEN_DISABLED);
+    filterFocusArea.unlock();
+    unlockScroll();
+
+    filter.removeEventListener(`keydown`, hidePopup);
+    filter.removeEventListener(`click`, hidePopup);
+    filter.removeEventListener(`click`, showPopup);
+    buttonOpen.addEventListener(`click`, addHandler);
   }
 
   (function init() {
@@ -80,5 +107,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
     if (form) {
       form.classList.add(POPUP_FORM);
     }
+
+    window.addEventListener(`resize`, restore);
   })();
 });
