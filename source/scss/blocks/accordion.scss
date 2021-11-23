@@ -1,4 +1,4 @@
-.accordion .accordion__label {
+.accordion .accordion__label-faq {
   padding-bottom: 44px;
 
   @media (max-width: $medium) {
@@ -6,7 +6,20 @@
   }
 }
 
-.accordion--visible .accordion__label {
+.accordion .accordion__label-filter {
+  padding-bottom: 22px;
+
+  @media (max-width: $large) {
+    padding-bottom: 34px;
+  }
+
+  @media (max-width: $medium) {
+    padding-bottom: 24px;
+  }
+}
+
+.accordion--visible .accordion__label-faq,
+.accordion--visible .accordion__label-filter {
   padding-bottom: 0;
 }
 

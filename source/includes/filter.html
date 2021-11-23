@@ -1,0 +1,223 @@
+<form class="form-filter"
+  action="https://echo.htmlacademy.ru/"
+  method="post"
+>
+  <fieldset class="form-filter__group">
+    <legend class="visually-hidden">Product</legend>
+    <div class="form-filter__subtitle">
+      <button class="toggle"
+        type="button"
+        aria-expanded="false"
+        aria-label="show products"
+      >
+        <svg class="icon"
+          width="17"
+          height="10"
+          focusable="false"
+        >
+          <use xlink:href="./img/sprite.svg#arrow-down"></use>
+        </svg>
+      </button>
+      <p aria-hidden="true">
+        Product
+      </p>
+    </div>
+    <div class="form-filter__detail">
+      <label class="form-filter__checkbox">
+        <input class="visually-hidden"
+          type="checkbox"
+          name="Product"
+          value="Necklaces"
+          checked
+        >
+        <span>
+          Necklaces
+        </span>
+      </label>
+      <label class="form-filter__checkbox">
+        <input class="visually-hidden"
+          type="checkbox"
+          name="Product"
+          value="Chokers"
+          checked
+        >
+        <span>
+          Chokers
+        </span>
+      </label>
+      <label class="form-filter__checkbox">
+        <input class="visually-hidden"
+          type="checkbox"
+          name="Product"
+          value="Rings"
+        >
+        <span>
+          Rings
+        </span>
+      </label>
+      <label class="form-filter__checkbox">
+        <input class="visually-hidden"
+          type="checkbox"
+          name="Product"
+          value="Earrings"
+          checked
+        >
+        <span>
+          Earrings
+        </span>
+      </label>
+    </div>
+  </fieldset>
+  <fieldset class="form-filter__group">
+    <legend class="visually-hidden">Material</legend>
+    <div class="form-filter__subtitle">
+      <button class="toggle"
+        type="button"
+        aria-expanded="false"
+        aria-label="show material"
+      >
+        <svg class="icon"
+          width="17"
+          height="10"
+          focusable="false"
+        >
+          <use xlink:href="./img/sprite.svg#arrow-down"></use>
+        </svg>
+      </button>
+      <p aria-hidden="true">
+        Material
+      </p>
+    </div>
+    <div class="form-filter__detail">
+      <label class="form-filter__checkbox">
+        <input class="visually-hidden"
+          type="checkbox"
+          name="Material"
+          value="Gold"
+          checked
+        >
+        <span>
+          Gold
+        </span>
+      </label>
+      <label class="form-filter__checkbox">
+        <input class="visually-hidden"
+          type="checkbox"
+          name="Material"
+          value="Silver"
+        >
+        <span>
+          Silver
+        </span>
+      </label>
+    </div>
+  </fieldset>
+  <fieldset class="form-filter__group">
+    <legend class="visually-hidden">Collection</legend>
+    <div class="form-filter__subtitle">
+      <button class="toggle"
+        type="button"
+        aria-expanded="false"
+        aria-label="show collection"
+      >
+        <svg class="icon"
+          width="17"
+          height="10"
+          focusable="false"
+        >
+          <use xlink:href="./img/sprite.svg#arrow-down"></use>
+        </svg>
+      </button>
+      <p aria-hidden="true">
+        Collection
+      </p>
+    </div>
+    <div class="form-filter__detail">
+      <label class="form-filter__checkbox">
+        <input class="visually-hidden"
+          type="checkbox"
+          name="Collection"
+          value="Pink flamingo"
+        >
+        <span>
+          Pink flamingo
+        </span>
+      </label>
+      <label class="form-filter__checkbox">
+        <input class="visually-hidden"
+          type="checkbox"
+          name="Collection"
+          value="Dreams"
+          checked
+        >
+        <span>
+          Dreams
+        </span>
+      </label>
+    </div>
+  </fieldset>
+  <fieldset class="form-filter__group">
+    <legend class="visually-hidden">Price</legend>
+    <div class="form-filter__subtitle">
+      <button class="toggle"
+        type="button"
+        aria-expanded="false"
+        aria-label="show price"
+      >
+        <svg class="icon"
+          width="17"
+          height="10"
+          focusable="false"
+        >
+          <use xlink:href="./img/sprite.svg#arrow-down"></use>
+        </svg>
+      </button>
+      <p aria-hidden="true">
+        Price
+      </p>
+    </div>
+    <div class="form-filter__detail form-filter__detail--range">
+      <div class="range">
+        <div class="range__controls">
+          <div class="range__scale">
+            <div class="range__progress-bar"></div>
+          </div>
+          <div class="range__toggles">
+            <div class="range__toggle range__toggle--min" tabindex="0"></div>
+            <div class="range__toggle range__toggle--max" tabindex="0"></div>
+          </div>
+        </div>
+        <div class="range__price">
+          <span class="range__price-min">$ 55</span>
+          <span class="range__price-max">$ 155</span>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <div class="form-filter__controls">
+    <button class="button button--primary button--extra-space"
+      type="submit"
+      aria-label="apply filter"
+    >
+      Apply
+    </button>
+    <button class="button"
+      type="reset"
+      aria-label="reset filter"
+    >
+      Clear All
+    </button>
+  </div>
+  <button class="exit exit--round"
+    type="button"
+    aria-label="close filter"
+  >
+    <svg class="icon"
+      width="14"
+      height="14"
+      focusable="false"
+    >
+      <use xlink:href="./img/sprite.svg#cross"></use>
+    </svg>
+  </button>
+</form>

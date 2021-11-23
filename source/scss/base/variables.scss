@@ -14,11 +14,14 @@ $basic-brown: #564034;
 $extra-black: #1d1613;
 $extra-grey: #f6f5f4;
 
+$popup-shadow: #dbd5d03d;
+
 //Viewport
-$xlarge: 1199px;
 $large: 1023px;
 $medium: 767px;
 
 //Position
 $z-index-background: -1;
 $z-index-base: 1;
+$z-index-menu: 3;
+$z-index-popup: 5;

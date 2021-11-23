@@ -14,18 +14,26 @@
     z-index: $z-index-background;
   }
 
+  h2 {
+    margin: 30px auto 0;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: -5px auto 15px;
+    font-style: italic;
+  }
+
   &--wide {
     padding-top: 150px;
     padding-bottom: 50px;
     min-height: 463px;
 
     h2 {
-      margin: 30px auto 0;
-      font-weight: 700;
       font-size: 45px;
       line-height: 58px;
       letter-spacing: 0.03em;
-      text-transform: uppercase;
 
       @media (min-width: $medium + 1) and (max-width: $large) {
         padding-right: 18px;
@@ -39,8 +47,6 @@
     }
 
     p {
-      margin: -5px auto 15px;
-      font-style: italic;
       font-weight: 400;
       font-size: 38px;
       line-height: 49px;
@@ -53,6 +59,33 @@
         margin-top: -7px;
         font-size: 34px;
         line-height: 44px;
+      }
+    }
+  }
+
+  &--narrow {
+    padding-top: 61px;
+    padding-bottom: 50px;
+    min-height: 261px;
+
+    h2 {
+      font-size: 34px;
+      line-height: 44px;
+
+      @media (max-width: $medium) {
+        margin-top: 17px;
+      }
+    }
+
+    p {
+      margin-top: 3px;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 29px;
+
+      @media (max-width: $medium) {
+        margin-top: 4px;
+        line-height: 26px;
       }
     }
   }

@@ -1,0 +1,123 @@
+.range {
+  width: 100%;
+
+  @media (max-width: $large) {
+    padding-bottom: 14px;
+  }
+}
+
+.range__controls {
+  position: relative;
+  margin-bottom: 5px;
+  height: 18px;
+  background-color: $basic-white;
+
+  @media (max-width: $large) {
+    height: 23px;
+  }
+}
+
+.range__scale {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: $basic-grey;
+}
+
+.range__progress-bar {
+  position: absolute;
+  top: 0;
+  left: 30%;
+  width: 45.5%;
+  height: 1px;
+  background-color: $primary;
+
+  @media (max-width: $large) {
+    left: 18%;
+    width: 56.5%;
+  }
+}
+
+.range__toggles {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -8px;
+  width: 100%;
+}
+
+.range__toggle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: $primary;
+  cursor: pointer;
+
+  @media (max-width: $large) {
+    width: 18px;
+    height: 18px;
+  }
+
+  &--min {
+    left: 26.5%;
+
+    @media (max-width: $large) {
+      left: 19%;
+    }
+  }
+
+  &--max {
+    left: 79.5%;
+
+    @media (max-width: $large) {
+      left: 76%;
+    }
+
+    @media (max-width: $medium) {
+      left: 74.5%;
+    }
+  }
+}
+
+.range__price {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto -4px;
+  width: 75.8%;
+  font-size: 14px;
+  line-height: 18px;
+
+  @media (max-width: $large) {
+    width: 72%;
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  @media (max-width: $medium) {
+    width: 75%;
+  }
+}
+
+.range__price-min {
+  margin-left: 10.15%;
+
+  @media (max-width: $large) {
+    margin-left: 0;
+  }
+}
+
+.range__price-max {
+  @media (max-width: $large) {
+    margin-right: 5%;
+  }
+
+  @media (max-width: $medium) {
+    margin-right: 6.5%;
+  }
+}

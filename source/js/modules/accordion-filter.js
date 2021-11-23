@@ -1,14 +1,14 @@
 import {showMenu} from './accordion.js';
 
-const CONTAINER = `questions`;
-const WRAPPER_CLASS = `questions__item`;
-const LABEL_CLASS = `questions__issue`;
-const CONTENT_CLASS = `questions__response`;
+const CONTAINER = `filter`;
+const WRAPPER_CLASS = `form-filter__group`;
+const LABEL_CLASS = `form-filter__subtitle`;
+const CONTENT_CLASS = `form-filter__detail`;
 const TOGGLE_BASE_CLASS = `toggle`;
-const TOGGLE_WIDE_MODIFIER = `toggle--wide`;
+const TOGGLE_NARROW_MODIFIER = `toggle--narrow`;
 const TOGGLE_DOWN_MODIFIER = `toggle--button-down`;
 const ACCORDION_CLASS = `accordion`;
-const ACCORDION_LABEL_CLASS = `accordion__label-faq`;
+const ACCORDION_LABEL_CLASS = `accordion__label-filter`;
 const ACCORDION_CONTENT_CLASS = `accordion__content`;
 
 const accordionContainer = document.querySelector(`.${CONTAINER}`);
@@ -33,7 +33,7 @@ const accordionContainer = document.querySelector(`.${CONTAINER}`);
     }
 
     if (toggles) {
-      toggles.forEach((toggle) => toggle.classList.add(TOGGLE_WIDE_MODIFIER));
+      toggles.forEach((toggle) => toggle.classList.add(TOGGLE_NARROW_MODIFIER));
       toggles.forEach((toggle) => toggle.classList.add(TOGGLE_DOWN_MODIFIER));
     }
 

@@ -1,0 +1,56 @@
+.button {
+  display: block;
+  margin: 0;
+  padding: 22px 15px 23px;
+  width: 100%;
+  font-weight: 500;
+  font-family: $poppins;
+  font-size: 16px;
+  line-height: 21px;
+  color: $extra-black;
+  background-color: transparent;
+  border: 1px solid $primary;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+
+  &--primary {
+    color: $basic-white;
+    background-color: $primary;
+  }
+
+  &--extra-space {
+    margin-bottom: 25px;
+
+    @media (max-width: $large) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &--filter {
+    display: none;
+
+    @media (max-width: $large) {
+      display: block;
+    }
+  }
+
+  &--disabled {
+    display: none;
+  }
+}
+
+.button:hover,
+.button:focus {
+  border-color: $extra-black;
+}
+
+.button:focus {
+  outline: 1px solid $extra-black;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.button:active {
+  border-color: rgba($extra-black, 0.75);
+  outline: none;
+}

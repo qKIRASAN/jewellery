@@ -1,6 +1,39 @@
 .toggle {
   display: none;
 
+  &--wide {
+    svg {
+      top: 50px;
+      right: 48px;
+
+      @media (max-width: $large) {
+        right: 49px;
+      }
+
+      @media (max-width: $medium) {
+        top: 25px;
+        right: 24px;
+      }
+    }
+  }
+
+  &--narrow {
+    svg {
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      right: 1.7em;
+
+      @media (max-width: $large) {
+        right: 3em;
+      }
+
+      @media (max-width: $medium) {
+        right: 1.5em;
+      }
+    }
+  }
+
   &--button-down,
   &--button-up {
     display: block;
@@ -20,39 +53,43 @@
 
     svg {
       position: absolute;
-      top: 50px;
-      right: 48px;
       width: 17px;
       height: 10px;
       transform: translateX(0);
       transition: transform 0.2s ease;
 
       @media (max-width: $large) {
-        right: 49px;
         width: 23px;
         height: 12px;
       }
 
       @media (max-width: $medium) {
-        top: 25px;
-        right: 24px;
         width: 20px;
         height: 10px;
       }
     }
   }
+}
 
-  &--button-up {
-    svg {
-      transform: rotateX(180deg);
+.toggle--wide.toggle--button-up {
+  svg {
+    @media (max-width: $large) {
+      top: 48px;
+    }
 
-      @media (max-width: $large) {
-        top: 48px;
-      }
+    @media (max-width: $medium) {
+      top: 23px;
+    }
+  }
+}
 
-      @media (max-width: $medium) {
-        top: 23px;
-      }
+.toggle--narrow.toggle--button-up {
+  svg {
+    transform: rotateX(180deg);
+    top: 1.7em;
+
+    @media (min-width: $medium) and (max-width: $large) {
+      top: 2.5em;
     }
   }
 }

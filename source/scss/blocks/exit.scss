@@ -1,0 +1,35 @@
+.exit {
+  display: none;
+  margin: 0;
+  padding: 0;
+  color: $extra-black;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transform: rotate(0);
+  transition: transform 0.2s ease;
+
+  svg {
+    margin: auto;
+  }
+
+  &--round {
+    width: 32px;
+    height: 32px;
+    color: $basic-white;
+    background-color: $extra-black;
+    border-radius: 50%;
+  }
+}
+
+.exit:hover,
+.exit:focus {
+  background-color: rgba($extra-black, 0.85);
+  transform: rotate(90deg);
+}
+
+.exit:active {
+  background-color: rgba($extra-black, 0.75);
+  transform: rotate(90deg);
+}

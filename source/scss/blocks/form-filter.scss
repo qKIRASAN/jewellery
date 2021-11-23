@@ -1,0 +1,227 @@
+.form-filter {
+  margin-right: 50px;
+  margin-bottom: 50px;
+  width: 250px;
+
+  @media (max-width: $large) {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+  }
+}
+
+.form-filter__exit {
+  display: none;
+
+  @media (max-width: $large) {
+    display: block;
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    z-index: $z-index-popup;
+  }
+
+  @media (max-width: $medium) {
+    right: -10px;
+  }
+}
+
+.form-filter__group {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 1px solid $primary;
+
+  @media (max-width: $large) {
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+  }
+
+  legend {
+    position: absolute;
+    top: 23px;
+    left: 23px;
+    line-height: 21px;
+    color: $extra-black;
+
+    @media (max-width: $large) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+  }
+}
+
+.form-filter__group:nth-of-type(n + 2) {
+  @media (min-width: $large + 1) {
+    border-top-width: 0;
+  }
+}
+
+.form-filter__subtitle {
+  position: relative;
+  margin: auto;
+  padding-top: 23px;
+  line-height: 21px;
+
+  @media (max-width: $large) {
+    padding-top: 34px;
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  @media (max-width: $medium) {
+    padding-top: 24px;
+  }
+
+  p {
+    margin: 0 64px 0 24px;
+    transform: translateX(0);
+    transition: transform 0.2s ease;
+
+    @media (max-width: $large) {
+      margin-right: 99px;
+      margin-left: 21px;
+    }
+
+    @media (max-width: $medium) {
+      margin-right: 89px;
+    }
+  }
+}
+
+.form-filter__detail {
+  margin-right: auto;
+  padding: 17px 25px 22px;
+  width: 80%;
+
+  @media (max-width: $large) {
+    padding-bottom: 24px;
+  }
+
+  @media (max-width: $medium) {
+    padding-bottom: 14px;
+  }
+
+  &--range {
+    width: 100%;
+
+    @media (max-width: $large) {
+      width: 85%;
+      padding-top: 21px;
+    }
+
+    @media (max-width: $medium) {
+      width: 100%;
+      padding-right: 11px;
+      padding-left: 11px;
+    }
+  }
+}
+
+.form-filter__checkbox {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 3px 0;
+  padding: 3px 9px;
+  cursor: pointer;
+
+  @media (max-width: $large) {
+    display: block;
+    margin: 3px 0 11px;
+    padding: 3px 6px;
+  }
+
+  @media (max-width: $medium) {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
+  input {
+    appearance: none;
+  }
+
+  span {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-left: 25px;
+    font-size: 14px;
+    line-height: 18px;
+    color: $extra-black;
+
+    @media (max-width: $large) {
+      padding-left: 30px;
+      font-size: 16px;
+      line-height: 21px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      background-color: $basic-white;
+      border: 1px solid $primary;
+
+      @media (max-width: $large) {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      background-color: $primary;
+      border: 1px solid $primary;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+
+      @media (max-width: $large) {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}
+
+.form-filter__controls {
+  padding: 35px 0 25px;
+
+  @media (max-width: $large) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-right: 40px;
+    margin-left: 21px;
+  }
+
+  @media (max-width: $medium) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}
+
+.form-filter__checkbox:hover span::before,
+.form-filter__checkbox:hover span::after,
+.form-filter__checkbox input:focus + span::before,
+.form-filter__checkbox input:focus:checked + span::after {
+  border-color: $extra-black;
+}
+
+.form-filter__checkbox input:checked + span::after {
+  opacity: 1;
+}
+
+.form-filter__checkbox:active span::before,
+.form-filter__checkbox:active span::after {
+  border-color: rgba($extra-black, 0.75);
+}

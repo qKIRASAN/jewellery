@@ -1,0 +1,11 @@
+.filter {
+  padding-top: 80px;
+
+  @media (max-width: $large) {
+    padding-top: 50px;
+  }
+
+  @media (max-width: $medium) {
+    padding-top: 40px;
+  }
+}
