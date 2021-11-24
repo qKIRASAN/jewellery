@@ -77,7 +77,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
     }
   }
 
-  function restore() {
+  function reset() {
     filter.classList.remove(POPUP_BUTTON_OPEN);
     buttonOpen.classList.remove(BUTTON_OPEN_DISABLED);
     filterFocusArea.unlock();
@@ -108,6 +108,6 @@ document.addEventListener(`DOMContentLoaded`, () => {
       form.classList.add(POPUP_FORM);
     }
 
-    window.addEventListener(`resize`, restore);
+    window.addEventListener(`resize`, reset);
   })();
 });

@@ -1,0 +1,96 @@
+.login {
+  padding: 30px 0;
+  width: 100%;
+  height: 100%;
+  background-color: $popup-background;
+
+  @media (max-width: $medium) {
+    padding: 20px 0;
+  }
+
+  &--popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z-index-popup;
+    overflow-y: auto;
+  }
+}
+
+.login__inner {
+  margin: auto;
+  width: 80%;
+  background-color: $basic-grey;
+  box-shadow: 0 5px 32px $popup-shadow-light;
+
+  @media (max-width: $large) {
+    width: 85%;
+  }
+
+  @media (max-width: $medium) {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  &--popup {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 25px auto;
+    width: 430px;
+    height: 586px;
+
+    @media (max-width: $large) {
+      width: 442px;
+      height: 586px;
+    }
+
+    @media (max-width: $medium) {
+      width: 270px;
+      height: 470px;
+    }
+  }
+
+  picture {
+    display: block;
+  }
+
+  img {
+    object-fit: cover;
+    height: auto;
+  }
+}
+
+.login__content {
+  padding: 25px 45px 40px;
+  font-size: 14px;
+  line-height: 21px;
+  color: $secondary;
+  text-align: center;
+
+  @media (max-width: $large) {
+    padding-right: 51px;
+    padding-left: 51px;
+  }
+
+  @media (max-width: $medium) {
+    padding: 15px 15px 25px;
+  }
+
+  h2 {
+    margin: 25px auto;
+    font-weight: 700;
+    font-family: $cormorant-garamond;
+    font-size: 34px;
+    line-height: 44px;
+    color: $extra-black;
+
+    @media (max-width: $medium) {
+      margin: 22px auto 19px;
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+}

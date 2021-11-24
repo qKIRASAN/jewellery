@@ -25,11 +25,18 @@
 
 .exit:hover,
 .exit:focus {
-  background-color: rgba($extra-black, 0.85);
   transform: rotate(90deg);
 }
 
+.exit--round:hover,
+.exit--round:focus {
+  background-color: rgba($extra-black, 0.85);
+}
+
 .exit:active {
-  background-color: rgba($extra-black, 0.75);
   transform: rotate(90deg);
+}
+
+.exit--round:active {
+  background-color: rgba($extra-black, 0.75);
 }

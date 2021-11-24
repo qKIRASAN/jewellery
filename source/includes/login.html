@@ -1,0 +1,65 @@
+<div class="login__inner">
+  <include src="includes/img.html">
+    {
+        "img": "login",
+        "width": "430",
+        "height": "138",
+        "alt": "two golden brooches with gems shot close-up"
+    }
+  </include>
+  <div class="login__content">
+    <h2>Log In</h2>
+    <form class="form-login"
+      action="https://echo.htmlacademy.ru/"
+      method="post"
+    >
+      <div class="form-login__field">
+        <input type="email"
+          id="user-email"
+          name="user-email"
+          placeholder="Your E-mail"
+          aria-label="Enter your e-mail"
+          required
+          autofocus
+        >
+        <label for="user-email">
+          Your E-mail
+        </label>
+      </div>
+      <div class="form-login__field">
+        <input type="password"
+          id="user-password"
+          name="user-password"
+          placeholder="Password"
+          aria-label="Enter your password"
+          required
+        >
+        <label for="user-password">
+          Password
+        </label>
+      </div>
+      <a class="form-login__note" href="#">Forgot your password?</a>
+      <button class="button button--primary"
+        type="submit"
+      >
+        Log in
+      </button>
+      <p class="form-login__sign-up">
+        <span>Don't have an account?</span>
+        <a href="#">Sign up</a>
+      </p>
+    </form>
+    <button class="exit"
+      type="button"
+      aria-label="close login form"
+    >
+      <svg class="icon"
+        width="14"
+        height="14"
+        focusable="false"
+      >
+        <use xlink:href="./img/sprite.svg#cross"></use>
+      </svg>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,142 @@
+.form-login {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-login__field {
+  position: relative;
+  flex-basis: 100%;
+  margin-bottom: 27px;
+
+  @media (max-width: $medium) {
+    margin-bottom: 22px;
+  }
+
+  input {
+    display: block;
+    margin: 0;
+    padding: 7px 0 8px;
+    width: 100%;
+    font-weight: inherit;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: inherit;
+    color: $extra-black;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid $extra-black;
+    border-radius: 0;
+    appearance: none;
+
+    &::-webkit-input-placeholder,
+    &::placeholder {
+      color: $secondary;
+      opacity: 1;
+    }
+  }
+
+  label {
+    position: absolute;
+    visibility: hidden;
+    top: 8px;
+    left: 0;
+    font-size: 14px;
+    color: $secondary;
+  }
+}
+
+.form-login__note {
+  margin: -21px 3px 44px auto;
+  font-size: 12px;
+  line-height: 18px;
+  color: $secondary;
+
+  @media (max-width: $medium) {
+    margin: -17px 0 35px auto;
+  }
+}
+
+.form-login__sign-up {
+  margin: 15px auto;
+
+  a {
+    color: $extra-black;
+  }
+}
+
+.form-login__exit {
+  display: block;
+  position: absolute;
+  top: 1.5em;
+  right: 1.5em;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (min-width: $medium + 1) and (max-width: $large) {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (max-width: $medium) {
+    top: 1.1em;
+    right: 1.1em;
+  }
+}
+
+.form-login__field:hover {
+  outline: 1px solid $secondary;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.form-login__field:active {
+  outline-color: darken($secondary, 15%);
+}
+
+.form-login__field input:focus {
+  outline: 1px solid $secondary;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.form-login__field input:focus + label {
+  visibility: visible;
+  top: -20px;
+  left: 0;
+  font-size: 10px;
+  transition: all 0.5s ease;
+}
+
+.form-login__note[href]:hover,
+.form-login__note[href]:focus {
+  color: $extra-black;
+}
+
+.form-login__note[href]:focus {
+  outline: 1px solid $extra-black;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.form-login__note[href]:active {
+  color: rgba($extra-black, 0.75);
+}
+
+.form-login__sign-up a[href]:hover,
+.form-login__sign-up a[href]:focus {
+  color: $primary;
+}
+
+.form-login__sign-up a[href]:focus {
+  outline: 1px solid $primary;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.form-login__sign-up a[href]:active {
+  color: darken($primary, 15%);
+  outline: none;
+}
