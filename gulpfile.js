@@ -190,6 +190,20 @@ function copy() {
   }))
 }
 
+function cleanUpBuild() {
+  return gulp.src(`${dist.root}*.html`)
+  .pipe(replace(
+    /(?:[a-z])+=""/g,
+    function(match) {
+      if (match === `disabled=""`) return `disabled`;
+      if (match === `autofocus=""`) return `autofocus`;
+      if (match === `required=""`) return `required`;
+      if (match === `checked=""`) return `checked`;
+    }
+  ))
+  .pipe(gulp.dest(dist.root));
+}
+
 function watch() {
   gulp.watch(`${src.root}*.html`, gulp.series(createHtml))
   .on('unlink', function(filepath) {
@@ -230,6 +244,7 @@ exports.html = createHtml;
 exports.css = createCss;
 exports.js = createScript;
 exports.sprite = createSprite;
+exports.cleanup = cleanUpBuild;
 exports.build = build;
 exports.default = gulp.series(
   build,

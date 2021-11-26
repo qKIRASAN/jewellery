@@ -1,7 +1,7 @@
-import Swiper, {Navigation, Pagination, Keyboard, A11y} from 'swiper';
+import Swiper, {Navigation, Pagination, Grid, Keyboard} from 'swiper';
 
-const WRAPPER_CLASS = `new__inner`;
-const PRODUCTS_CONTAINER_CLASS = `products-container`;
+const WRAPPER_CLASS = `products-container--catalog`;
+const PRODUCTS_CONTAINER_CLASS = `products-container__inner`;
 const PRODUCTS_CLASS = `products`;
 const PAGINATION_CLASS = `pagination`;
 const TOGGLES_CLASS = `toggles`;
@@ -12,6 +12,7 @@ const TOGGLE_NEXT = `next`;
 const SLIDER_CLASS = `slider`;
 const SLIDER_MODIFIER = `slider--`;
 const SLIDES_CLASS = `slider__items`;
+const SLIDES_MODIFIER = `slider__items--catalog`;
 const SLIDE_BASE_CLASS = `slider__item`;
 const SLIDE_ACTIVE_CLASS = `slider__item--active`;
 const SLIDE_PREV_CLASS = `slider__item--prev`;
@@ -22,13 +23,11 @@ const SLIDER_PAGINATION_CLICKABLE = `slider__pagination--clickable`;
 const SLIDER_BULLET_CLASS = `slider__bullet`;
 const SLIDER_BULLET_ACTIVE_CLASS = `slider__bullet--active`;
 const SLIDER_TOGGLES_CLASS = `slider__toggles`;
+const SLIDER_TOGGLES_MODIFIER = `slider__toggles--catalog`;
 const SLIDER_TOGGLE_BASE_CLASS = `slider__toggle`;
 const SLIDER_TOGGLE_PREV_CLASS = `slider__toggle--prev`;
 const SLIDER_TOGGLE_NEXT_CLASS = `slider__toggle--next`;
 const SLIDER_TOGGLE_DISABLED_CLASS = `slider__toggle--disabled`;
-const SLIDER_FRACTION_CURRENT_CLASS = `slider__fraction-current`;
-const SLIDER_FRACTION_TOTAL_CLASS = `slider__fraction-total`;
-const SLIDER_NOTIFICATION = `slider__notification`;
 
 document.addEventListener(`DOMContentLoaded`, () => {
   const wrapper = document.querySelector(`.${WRAPPER_CLASS}`);
@@ -45,8 +44,8 @@ document.addEventListener(`DOMContentLoaded`, () => {
   if (!slidesContainer) {
     return;
   }
-
   const slides = Array.from(slidesContainer.children);
+
   const pagination = wrapper.querySelector(`.${PAGINATION_CLASS}`);
   if (!pagination) {
     return;
@@ -56,7 +55,6 @@ document.addEventListener(`DOMContentLoaded`, () => {
   if (!togglesContainer) {
     return;
   }
-
   const toggles = Array.from(togglesContainer.children);
 
   (function init() {
@@ -66,6 +64,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
     if (slidesContainer) {
       slidesContainer.classList.add(SLIDES_CLASS);
+      slidesContainer.classList.add(SLIDES_MODIFIER);
     }
 
     if (slides) {
@@ -92,11 +91,12 @@ document.addEventListener(`DOMContentLoaded`, () => {
       });
 
       togglesContainer.classList.add(SLIDER_TOGGLES_CLASS);
+      togglesContainer.classList.add(SLIDER_TOGGLES_MODIFIER);
     }
   })();
 
   const slider = new Swiper(`.${SLIDER_CLASS}`, {
-    modules: [Navigation, Pagination, Keyboard, A11y],
+    modules: [Navigation, Pagination, Grid, Keyboard],
     init: false,
     containerModifierClass: SLIDER_MODIFIER,
     wrapperClass: SLIDES_CLASS,
@@ -113,51 +113,31 @@ document.addEventListener(`DOMContentLoaded`, () => {
       el: `.${SLIDER_PAGINATION_CLASS}`,
       clickable: true,
       clickableClass: SLIDER_PAGINATION_CLICKABLE,
-      modifierClass: SLIDER_PAGINATION_MODIFIER
+      modifierClass: SLIDER_PAGINATION_MODIFIER,
+      type: `bullets`,
+      bulletElement: `li`,
+      bulletClass: SLIDER_BULLET_CLASS,
+      bulletActiveClass: SLIDER_BULLET_ACTIVE_CLASS,
+      renderBullet(index, className) {
+        return `<li class="${className}">${++index}</li>`;
+      }
     },
     keyboard: {
       enabled: true
-    },
-    a11y: {
-      notificationClass: SLIDER_NOTIFICATION
     },
     breakpoints: {
       320: {
         slidesPerView: 2,
         slidesPerGroup: 2,
-        pagination: {
-          type: `fraction`,
-          currentClass: SLIDER_FRACTION_CURRENT_CLASS,
-          totalClass: SLIDER_FRACTION_TOTAL_CLASS,
-          renderFraction(currentClass, totalClass) {
-            return `<li><span class="${currentClass}"></span>&ensp;of&ensp;<span class="${totalClass}"></span></li>`;
-          }
+        grid: {
+          rows: 6
         }
       },
       768: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-        pagination: {
-          type: `bullets`,
-          bulletElement: `li`,
-          bulletClass: SLIDER_BULLET_CLASS,
-          bulletActiveClass: SLIDER_BULLET_ACTIVE_CLASS,
-          renderBullet(index, className) {
-            return `<li class="${className}">${++index}</li>`;
-          }
-        }
-      },
-      1024: {
-        slidesPerView: 4,
-        slidesPerGroup: 4,
-        pagination: {
-          type: `bullets`,
-          bulletElement: `li`,
-          bulletClass: SLIDER_BULLET_CLASS,
-          bulletActiveClass: SLIDER_BULLET_ACTIVE_CLASS,
-          renderBullet(index, className) {
-            return `<li class="${className}">${++index}</li>`;
-          }
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        grid: {
+          rows: 4
         }
       }
     }

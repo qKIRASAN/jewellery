@@ -10,7 +10,6 @@ const POPUP = `login--popup`;
 const POPUP_INNER = `login__inner--popup`;
 const BUTTON_LOGIN_AUTH = `auth__login`;
 const BUTTON_LOGIN_NAV = `nav__login`;
-const BUTTON_LOGIN_ERROR = `error__login`;
 const BUTTON_CLOSE = `exit`;
 const FORM = `form-login`;
 const FORM_FIELD = `input`;
@@ -19,8 +18,7 @@ const FORM_BUTTON_CLOSE = `form-login__exit`;
 document.addEventListener(`DOMContentLoaded`, () => {
   const loginButtons = document.querySelectorAll(`
     .${BUTTON_LOGIN_AUTH},
-    .${BUTTON_LOGIN_NAV},
-    .${BUTTON_LOGIN_ERROR}
+    .${BUTTON_LOGIN_NAV}
   `);
 
   if (loginButtons) {

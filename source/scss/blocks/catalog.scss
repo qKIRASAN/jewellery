@@ -1,0 +1,13 @@
+.catalog {
+  padding-top: 80px;
+  padding-bottom: 62px;
+
+  @media (max-width: $large) {
+    padding-top: 25px;
+    padding-bottom: 66px;
+  }
+
+  @media (max-width: $medium) {
+    padding-bottom: 62px;
+  }
+}

@@ -38,18 +38,21 @@
     right: 0;
     bottom: 0;
     left: 0;
-    margin: 25px auto;
+    margin: auto;
     width: 430px;
     height: 586px;
 
     @media (max-width: $large) {
       width: 442px;
-      height: 586px;
     }
 
     @media (max-width: $medium) {
       width: 270px;
       height: 470px;
+
+      @media (orientation: landscape) {
+        margin: 0.5vh auto;
+      }
     }
   }
 

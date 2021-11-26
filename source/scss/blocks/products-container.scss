@@ -1,0 +1,29 @@
+.products-container {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &--base {
+    max-width: calc(100vw - 90px);
+
+    @media (max-width: $large) {
+      padding-top: 45px;
+      padding-bottom: 35px;
+    }
+
+    @media (max-width: $medium) {
+      padding-top: 35px;
+      padding-bottom: 30px;
+      max-width: calc(100vw - 30px);
+    }
+  }
+
+  &--catalog {
+    padding-top: 0;
+    max-width: 100%;
+
+    @media (max-width: $large) {
+      padding-bottom: 34px;
+    }
+  }
+}

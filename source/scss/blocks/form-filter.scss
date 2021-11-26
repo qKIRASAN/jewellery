@@ -1,13 +1,14 @@
 .form-filter {
   margin-right: 50px;
   margin-bottom: 50px;
-  width: 250px;
+  max-width: 250px;
 
   @media (max-width: $large) {
     position: relative;
     margin-right: auto;
     margin-left: auto;
     width: 100%;
+    max-width: 100%;
   }
 }
 
