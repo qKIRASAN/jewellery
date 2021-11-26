@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en" class="page">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="CH Jewellery shop web site">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>CH Jewellery | Main</title>
+  <link rel="preload" href="./fonts/poppins-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="./fonts/poppins-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload"
+    href="./fonts/cormorant-garamond-semibold.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  >
+  <link rel="preload" href="./fonts/cormorant-garamond-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+<body class="page__body">
+<header class="header">
+  <div class="header__top">
+    <div class="lead page__container">
+      <button class="burger burger--no-js lead__burger" type="button" aria-expanded="false" aria-label="expand menu">
+        <svg class="icon burger__button" width="25" height="18" focusable="false">
+          <use xlink:href="./img/sprite.svg#burger"></use>
+        </svg>
+      </button>
+      <form class="form-search lead__form-search" action="https://echo.htmlacademy.ru" method="get" role="search">
+        <div class="form-search__field">
+          <input type="search"
+            id="site-search"
+            name="q"
+            placeholder="Type here to search"
+            aria-label="Search through site content"
+          >
+          <label for="site-search">
+            Type here to search
+          </label>
+          <button class="search" type="submit" aria-label="start search">
+            <svg class="icon" width="16" height="16" focusable="false">
+              <use xlink:href="./img/sprite.svg#loupe"></use>
+            </svg>
+          </button>
+        </div>
+      </form>
+      <a class="logo lead__logo" href="./main.html" aria-hidden="false" aria-label="go to main page">
+        <svg class="icon" width="66" height="66" focusable="false">
+          <use xlink:href="./img/sprite.svg#logo"></use>
+        </svg>
+      </a>
+      <div class="auth lead__auth">
+        <a class="auth__cart" href="#">
+          <span>
+            Cart&ensp;0
+          </span>
+          <svg class="icon" width="20" height="18" focusable="false">
+            <use xlink:href="./img/sprite.svg#cart"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <nav class="nav page__container">
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a class="nav__link" href="./catalog.html">
+          What’s new
+        </a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="./catalog.html">
+          Chokers
+        </a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="./catalog.html">
+          Necklaces
+        </a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="./catalog.html">
+          Rings
+        </a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="./catalog.html">
+          Earrings
+        </a>
+      </li>
+    </ul>
+    <ul class="nav__list nav__list--small">
+      <li class="nav__item">
+        <a class="nav__link" href="#">
+          About CH
+        </a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="#">
+          Stores &amp; Hours
+        </a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="#">
+          Contact Us
+        </a>
+      </li>
+    </ul>
+    <a class="nav__login" href="./login.html">
+      Login
+    </a>
+  </nav>
+</header>
+<main>
+  <h1 class="visually-hidden">
+    CH Jewellery shop. Login page
+  </h1>
+  <section class="login">
+    <div class="page__container">
+      <div class="login__inner">
+        <picture>
+          <source type="image/webp"
+            media="(max-width: 767px)"
+            srcset="./img/login_sm.webp 1x, ./img/login_sm@2x.webp 2x"
+          >
+          <source type="image/webp"
+            media="(max-width: 1023px)"
+            srcset="./img/login_md.webp 1x, ./img/login_md@2x.webp 2x"
+          >
+          <source type="image/webp" media="(min-width: 1024px)" srcset="./img/login.webp 1x, ./img/login@2x.webp 2x">
+          <!-- 1x: 430px, 2x: 860px-->
+          <img src="./img/login.jpg"
+            srcset="./img/login@2x.jpg 2x"
+            width="430"
+            height="138"
+            alt="two golden brooches with gems shot close-up"
+            loading="lazy"
+          >
+        </picture>
+        <div class="login__content">
+          <h2>Log In</h2>
+          <form class="form-login" action="https://echo.htmlacademy.ru/" method="post">
+            <div class="form-login__field">
+              <input type="email"
+                id="user-email"
+                name="user-email"
+                placeholder="Your E-mail"
+                aria-label="Enter your e-mail"
+                required
+                autofocus
+              >
+              <label for="user-email">
+                Your E-mail
+              </label>
+            </div>
+            <div class="form-login__field">
+              <input type="password"
+                id="user-password"
+                name="user-password"
+                placeholder="Password"
+                aria-label="Enter your password"
+                required
+              >
+              <label for="user-password">
+                Password
+              </label>
+            </div>
+            <a class="form-login__note" href="#">Forgot your password?</a>
+            <button class="button button--primary" type="submit">
+              Log in
+            </button>
+            <p class="form-login__sign-up">
+              <span>Don't have an account?</span>
+              <a href="#">Sign up</a>
+            </p>
+          </form>
+          <button class="exit" type="button" aria-label="close login form">
+            <svg class="icon" width="14" height="14" focusable="false">
+              <use xlink:href="./img/sprite.svg#cross"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="footer__inner page__container">
+    <form class="form-subscription footer__form" action="https://echo.htmlacademy.ru" method="post">
+      <h2>The good stuff in&nbsp;your inbox</h2>
+      <p>News and updates from CH. No&nbsp;spam, we&nbsp;promise.</p>
+      <div class="form-subscription__field">
+        <input type="email"
+          id="subscription"
+          name="subscription"
+          placeholder="Your E-mail"
+          aria-label="Enter your e-mail"
+        >
+        <label for="subscription">
+          Your E-mail
+        </label>
+        <button class="subscribe" type="submit">
+          <span>Sign Up</span>
+          <svg class="icon" width="30" height="11" focusable="false">
+            <use xlink:href="./img/sprite.svg#arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+    </form>
+    <ul class="footer__nav-list footer__nav-list--service">
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">
+          Ordering &amp; Payment
+        </a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">
+          Terms &amp; Conditions
+        </a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">
+          Returns &amp; Exchanges
+        </a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">
+          Delivery
+        </a>
+      </li>
+    </ul>
+    <ul class="footer__nav-list footer__nav-list--about">
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">
+          About CH
+        </a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">
+          Stores &amp; Hours
+        </a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">
+          Jobs
+        </a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">
+          Contact Us
+        </a>
+      </li>
+    </ul>
+    <ul class="footer__nav-list footer__nav-list--social">
+      <li class="footer__nav-item footer__nav-item--social">
+        <a class="footer__nav-link footer__nav-link--social footer__nav-link--fb" href="#">
+          <svg class="icon" width="8" height="15" focusable="false">
+            <use xlink:href="./img/sprite.svg#fb"></use>
+          </svg>
+          <span>Facebook</span>
+        </a>
+      </li>
+      <li class="footer__nav-item footer__nav-item--social">
+        <a class="footer__nav-link footer__nav-link--social footer__nav-link--ig" href="#">
+          <svg class="icon" width="15" height="15" focusable="false">
+            <use xlink:href="./img/sprite.svg#ig"></use>
+          </svg>
+          <span>Instagram</span>
+        </a>
+      </li>
+      <li class="footer__nav-item footer__nav-item--social">
+        <a class="footer__nav-link footer__nav-link--social footer__nav-link--pt" href="#">
+          <svg class="icon" width="16" height="15" focusable="false">
+            <use xlink:href="./img/sprite.svg#pt"></use>
+          </svg>
+          <span>Pinterest</span>
+        </a>
+      </li>
+      <li class="footer__nav-item footer__nav-item--social">
+        <a class="footer__nav-link footer__nav-link--social footer__nav-link--tw" href="#">
+          <svg class="icon" width="15" height="13" focusable="false">
+            <use xlink:href="./img/sprite.svg#tw"></use>
+          </svg>
+          <span>Twitter</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+<script src="./js/vendor.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>
