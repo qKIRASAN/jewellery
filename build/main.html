@@ -7,18 +7,8 @@
   <title>CH Jewellery | Main</title>
   <link rel="preload" href="./fonts/poppins-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="./fonts/poppins-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload"
-    href="./fonts/cormorant-garamond-italic.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  >
-  <link rel="preload"
-    href="./fonts/cormorant-garamond-semibold.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  >
+  <link rel="preload" href="./fonts/cormorant-garamond-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="./fonts/cormorant-garamond-semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="./fonts/cormorant-garamond-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.min.css">
 </head>
@@ -152,6 +142,18 @@
     <h2>New In</h2>
     <a class="new__link" href="./catalog.html">Shop Now</a>
     <div class="products-container products-container--base">
+      <div class="toggles">
+        <button type="button" data-toggle="previous" aria-label="show previous slide">
+          <svg class="icon" width="30" height="11" focusable="false">
+            <use xlink:href="./img/sprite.svg#arrow-left"></use>
+          </svg>
+        </button>
+        <button type="button" data-toggle="next" aria-label="show next slide">
+          <svg class="icon" width="30" height="11" focusable="false">
+            <use xlink:href="./img/sprite.svg#arrow-right"></use>
+          </svg>
+        </button>
+      </div>
       <div class="products-container__inner">
         <ul class="products">
           <li class="products__item">
@@ -169,8 +171,10 @@
                   loading="lazy"
                 >
               </picture>
-              <h3>Necklace with amethyst</h3>
-              <p>$ 145</p>
+              <div class="products__body">
+                <h3>Necklace with amethyst</h3>
+                <p>$ 145</p>
+              </div>
             </a>
           </li>
           <li class="products__item">
@@ -188,8 +192,10 @@
                   loading="lazy"
                 >
               </picture>
-              <h3>Layered сhoker</h3>
-              <p>$ 115</p>
+              <div class="products__body">
+                <h3>Layered сhoker</h3>
+                <p>$ 115</p>
+              </div>
             </a>
           </li>
           <li class="products__item">
@@ -207,8 +213,10 @@
                   loading="lazy"
                 >
               </picture>
-              <h3>Gold chain</h3>
-              <p>$ 215</p>
+              <div class="products__body">
+                <h3>Gold chain</h3>
+                <p>$ 215</p>
+              </div>
             </a>
           </li>
           <li class="products__item">
@@ -224,8 +232,10 @@
                   loading="lazy"
                 >
               </picture>
-              <h3>Galaxy earrings</h3>
-              <p>$ 95</p>
+              <div class="products__body">
+                <h3>Galaxy earrings</h3>
+                <p>$ 95</p>
+              </div>
             </a>
           </li>
           <li class="products__item">
@@ -243,8 +253,10 @@
                   loading="lazy"
                 >
               </picture>
-              <h3>Double pearl earrings </h3>
-              <p>$ 115</p>
+              <div class="products__body">
+                <h3>Double pearl earrings </h3>
+                <p>$ 115</p>
+              </div>
             </a>
           </li>
           <li class="products__item">
@@ -262,8 +274,10 @@
                   loading="lazy"
                 >
               </picture>
-              <h3>Choker with gold bead</h3>
-              <p>$ 55</p>
+              <div class="products__body">
+                <h3>Choker with gold bead</h3>
+                <p>$ 55</p>
+              </div>
             </a>
           </li>
           <li class="products__item">
@@ -281,8 +295,10 @@
                   loading="lazy"
                 >
               </picture>
-              <h3>Gold layered necklace</h3>
-              <p>$ 155</p>
+              <div class="products__body">
+                <h3>Gold layered necklace</h3>
+                <p>$ 155</p>
+              </div>
             </a>
           </li>
           <li class="products__item">
@@ -300,8 +316,10 @@
                   loading="lazy"
                 >
               </picture>
-              <h3>Blue gemstone pendant</h3>
-              <p>$ 105</p>
+              <div class="products__body">
+                <h3>Blue gemstone pendant</h3>
+                <p>$ 105</p>
+              </div>
             </a>
           </li>
           <li class="products__item">
@@ -317,8 +335,10 @@
                   loading="lazy"
                 >
               </picture>
-              <h3>Boho earrings</h3>
-              <p>$ 75</p>
+              <div class="products__body">
+                <h3>Boho earrings</h3>
+                <p>$ 75</p>
+              </div>
             </a>
           </li>
           <li class="products__item">
@@ -334,8 +354,10 @@
                   loading="lazy"
                 >
               </picture>
-              <h3>Gold bird necklace</h3>
-              <p>$ 135</p>
+              <div class="products__body">
+                <h3>Gold bird necklace</h3>
+                <p>$ 135</p>
+              </div>
             </a>
           </li>
           <li class="products__item">
@@ -353,8 +375,10 @@
                   loading="lazy"
                 >
               </picture>
-              <h3>Black leather choker</h3>
-              <p>$ 85</p>
+              <div class="products__body">
+                <h3>Black leather choker</h3>
+                <p>$ 85</p>
+              </div>
             </a>
           </li>
           <li class="products__item">
@@ -372,8 +396,10 @@
                   loading="lazy"
                 >
               </picture>
-              <h3>Necklace with amethyst</h3>
-              <p>$ 145</p>
+              <div class="products__body">
+                <h3>Necklace with amethyst</h3>
+                <p>$ 145</p>
+              </div>
             </a>
           </li>
         </ul>
@@ -383,18 +409,6 @@
         <li>2</li>
         <li>3</li>
       </ol>
-      <div class="toggles">
-        <button type="button" data-toggle="previous" aria-label="show previous slide">
-          <svg class="icon" width="30" height="11" focusable="false">
-            <use xlink:href="./img/sprite.svg#arrow-left"></use>
-          </svg>
-        </button>
-        <button type="button" data-toggle="next" aria-label="show next slide">
-          <svg class="icon" width="30" height="11" focusable="false">
-            <use xlink:href="./img/sprite.svg#arrow-right"></use>
-          </svg>
-        </button>
-      </div>
     </div>
   </section>
   <section class="blog page__container">
@@ -688,6 +702,7 @@
           name="subscription"
           placeholder="Your E-mail"
           aria-label="Enter your e-mail"
+          required
         >
         <label for="subscription">
           Your E-mail

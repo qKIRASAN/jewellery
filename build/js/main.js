@@ -171,7 +171,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_local_storage_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/local-storage.js */ "./source/js/modules/local-storage.js");
 /* harmony import */ var _modules_popup_login_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/popup-login.js */ "./source/js/modules/popup-login.js");
 /* harmony import */ var _modules_accordion_faq_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/accordion-faq.js */ "./source/js/modules/accordion-faq.js");
+/* harmony import */ var _modules_accordion_faq_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modules_accordion_faq_js__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _modules_accordion_filter_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/accordion-filter.js */ "./source/js/modules/accordion-filter.js");
+/* harmony import */ var _modules_accordion_filter_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_accordion_filter_js__WEBPACK_IMPORTED_MODULE_7__);
 
 
 
@@ -188,13 +190,8 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************!*\
   !*** ./source/js/modules/accordion-faq.js ***!
   \********************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./accordion.js */ "./source/js/modules/accordion.js");
-
+/*! no static exports found */
+/***/ (function(module, exports) {
 
 const CONTAINER = `questions`;
 const WRAPPER_CLASS = `questions__item`;
@@ -202,19 +199,27 @@ const LABEL_CLASS = `questions__issue`;
 const CONTENT_CLASS = `questions__response`;
 const TOGGLE_BASE_CLASS = `toggle`;
 const TOGGLE_WIDE_MODIFIER = `toggle--wide`;
+const TOGGLE_UP_MODIFIER = `toggle--button-up`;
 const TOGGLE_DOWN_MODIFIER = `toggle--button-down`;
 const ACCORDION_CLASS = `accordion`;
 const ACCORDION_LABEL_CLASS = `accordion__label-faq`;
 const ACCORDION_CONTENT_CLASS = `accordion__content`;
+const ACCORDION_VISIBLE_MODIFIER = `accordion--visible`;
+const ARIA_LABEL_ATTRIBUTE = `aria-label`;
+const VALUE_SHOW = `show`;
+const VALUE_HIDE = `hide`;
+const ARIA_EXPANDED_ATTRIBUTE = `aria-expanded`;
+const VALUE_TRUE = `true`;
+const VALUE_FALSE = `false`;
 
 const accordionContainer = document.querySelector(`.${CONTAINER}`);
+const toggles = document.querySelectorAll(`.${TOGGLE_BASE_CLASS}`);
 
 (function init() {
   if (accordionContainer) {
     const accordions = accordionContainer.querySelectorAll(`.${WRAPPER_CLASS}`);
     const accordionLabels = accordionContainer.querySelectorAll(`.${LABEL_CLASS}`);
     const accordionContents = accordionContainer.querySelectorAll(`.${CONTENT_CLASS}`);
-    const toggles = accordionContainer.querySelectorAll(`.${TOGGLE_BASE_CLASS}`);
 
     if (accordions) {
       accordions.forEach((accordion) => accordion.classList.add(ACCORDION_CLASS));
@@ -233,92 +238,9 @@ const accordionContainer = document.querySelector(`.${CONTAINER}`);
       toggles.forEach((toggle) => toggle.classList.add(TOGGLE_DOWN_MODIFIER));
     }
 
-    accordionContainer.addEventListener(`click`, _accordion_js__WEBPACK_IMPORTED_MODULE_0__["showMenu"]);
+    accordionContainer.addEventListener(`click`, showMenu);
   }
 })();
-
-
-/***/ }),
-
-/***/ "./source/js/modules/accordion-filter.js":
-/*!***********************************************!*\
-  !*** ./source/js/modules/accordion-filter.js ***!
-  \***********************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./accordion.js */ "./source/js/modules/accordion.js");
-
-
-const CONTAINER = `filter`;
-const WRAPPER_CLASS = `form-filter__group`;
-const LABEL_CLASS = `form-filter__subtitle`;
-const CONTENT_CLASS = `form-filter__detail`;
-const TOGGLE_BASE_CLASS = `toggle`;
-const TOGGLE_NARROW_MODIFIER = `toggle--narrow`;
-const TOGGLE_DOWN_MODIFIER = `toggle--button-down`;
-const ACCORDION_CLASS = `accordion`;
-const ACCORDION_LABEL_CLASS = `accordion__label-filter`;
-const ACCORDION_CONTENT_CLASS = `accordion__content`;
-
-const accordionContainer = document.querySelector(`.${CONTAINER}`);
-
-(function init() {
-  if (accordionContainer) {
-    const accordions = accordionContainer.querySelectorAll(`.${WRAPPER_CLASS}`);
-    const accordionLabels = accordionContainer.querySelectorAll(`.${LABEL_CLASS}`);
-    const accordionContents = accordionContainer.querySelectorAll(`.${CONTENT_CLASS}`);
-    const toggles = accordionContainer.querySelectorAll(`.${TOGGLE_BASE_CLASS}`);
-
-    if (accordions) {
-      accordions.forEach((accordion) => accordion.classList.add(ACCORDION_CLASS));
-    }
-
-    if (accordionLabels) {
-      accordionLabels.forEach((label) => label.classList.add(ACCORDION_LABEL_CLASS));
-    }
-
-    if (accordionContents) {
-      accordionContents.forEach((content) => content.classList.add(ACCORDION_CONTENT_CLASS));
-    }
-
-    if (toggles) {
-      toggles.forEach((toggle) => toggle.classList.add(TOGGLE_NARROW_MODIFIER));
-      toggles.forEach((toggle) => toggle.classList.add(TOGGLE_DOWN_MODIFIER));
-    }
-
-    accordionContainer.addEventListener(`click`, _accordion_js__WEBPACK_IMPORTED_MODULE_0__["showMenu"]);
-  }
-})();
-
-
-/***/ }),
-
-/***/ "./source/js/modules/accordion.js":
-/*!****************************************!*\
-  !*** ./source/js/modules/accordion.js ***!
-  \****************************************/
-/*! exports provided: showMenu */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showMenu", function() { return showMenu; });
-const TOGGLE_BASE_CLASS = `toggle`;
-const TOGGLE_DOWN_MODIFIER = `toggle--button-down`;
-const TOGGLE_UP_MODIFIER = `toggle--button-up`;
-const ACCORDION_CLASS = `accordion`;
-const ACCORDION_VISIBLE_MODIFIER = `accordion--visible`;
-const ARIA_LABEL_ATTRIBUTE = `aria-label`;
-const VALUE_SHOW = `show`;
-const VALUE_HIDE = `hide`;
-const ARIA_EXPANDED_ATTRIBUTE = `aria-expanded`;
-const VALUE_TRUE = `true`;
-const VALUE_FALSE = `false`;
-
-const toggles = document.querySelectorAll(`.${TOGGLE_BASE_CLASS}`);
 
 function showMenu(evt) {
   const toggle = evt.target.closest(`.${TOGGLE_BASE_CLASS}`);
@@ -367,6 +289,90 @@ function hideMenu() {
       toggle.setAttribute(ARIA_LABEL_ATTRIBUTE, replacement);
       toggle.setAttribute(ARIA_EXPANDED_ATTRIBUTE, VALUE_FALSE);
     });
+  }
+}
+
+
+/***/ }),
+
+/***/ "./source/js/modules/accordion-filter.js":
+/*!***********************************************!*\
+  !*** ./source/js/modules/accordion-filter.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+const CONTAINER = `filter`;
+const WRAPPER_CLASS = `form-filter__group`;
+const LABEL_CLASS = `form-filter__subtitle`;
+const CONTENT_CLASS = `form-filter__detail`;
+const TOGGLE_BASE_CLASS = `toggle`;
+const TOGGLE_NARROW_MODIFIER = `toggle--narrow`;
+const TOGGLE_UP_MODIFIER = `toggle--button-up`;
+const TOGGLE_DOWN_MODIFIER = `toggle--button-down`;
+const ACCORDION_CLASS = `accordion`;
+const ACCORDION_LABEL_CLASS = `accordion__label-filter`;
+const ACCORDION_CONTENT_CLASS = `accordion__content`;
+const ACCORDION_VISIBLE_MODIFIER = `accordion--visible`;
+const ARIA_LABEL_ATTRIBUTE = `aria-label`;
+const VALUE_SHOW = `show`;
+const VALUE_HIDE = `hide`;
+const ARIA_EXPANDED_ATTRIBUTE = `aria-expanded`;
+const VALUE_TRUE = `true`;
+const VALUE_FALSE = `false`;
+
+const accordionContainer = document.querySelector(`.${CONTAINER}`);
+
+(function init() {
+  if (accordionContainer) {
+    const accordions = accordionContainer.querySelectorAll(`.${WRAPPER_CLASS}`);
+    const accordionLabels = accordionContainer.querySelectorAll(`.${LABEL_CLASS}`);
+    const accordionContents = accordionContainer.querySelectorAll(`.${CONTENT_CLASS}`);
+    const toggles = accordionContainer.querySelectorAll(`.${TOGGLE_BASE_CLASS}`);
+
+    if (accordions) {
+      accordions.forEach((accordion) => accordion.classList.add(ACCORDION_CLASS));
+    }
+
+    if (accordionLabels) {
+      accordionLabels.forEach((label) => label.classList.add(ACCORDION_LABEL_CLASS));
+    }
+
+    if (accordionContents) {
+      accordionContents.forEach((content) => content.classList.add(ACCORDION_CONTENT_CLASS));
+    }
+
+    if (toggles) {
+      toggles.forEach((toggle) => toggle.classList.add(TOGGLE_NARROW_MODIFIER));
+      toggles.forEach((toggle) => toggle.classList.add(TOGGLE_DOWN_MODIFIER));
+    }
+
+    accordionContainer.addEventListener(`click`, toggleMenu);
+  }
+})();
+
+function toggleMenu(evt) {
+  const toggle = evt.target.closest(`.${TOGGLE_BASE_CLASS}`);
+  if (!toggle) {
+    return;
+  }
+
+  const accordion = toggle.closest(`.${ACCORDION_CLASS}`);
+  const isVisible = accordion.classList.contains(ACCORDION_VISIBLE_MODIFIER);
+  const ariaLabelValue = toggle.getAttribute(ARIA_LABEL_ATTRIBUTE);
+  const initialValue = ariaLabelValue.replace(VALUE_HIDE, VALUE_SHOW);
+  const replacement = ariaLabelValue.replace(VALUE_SHOW, VALUE_HIDE);
+
+  accordion.classList.toggle(ACCORDION_VISIBLE_MODIFIER);
+  toggle.classList.toggle(TOGGLE_UP_MODIFIER);
+  toggle.classList.toggle(TOGGLE_DOWN_MODIFIER);
+
+  if (isVisible) {
+    toggle.setAttribute(ARIA_LABEL_ATTRIBUTE, initialValue);
+    toggle.setAttribute(ARIA_EXPANDED_ATTRIBUTE, VALUE_FALSE);
+  } else {
+    toggle.setAttribute(ARIA_LABEL_ATTRIBUTE, replacement);
+    toggle.setAttribute(ARIA_EXPANDED_ATTRIBUTE, VALUE_TRUE);
   }
 }
 
@@ -895,17 +901,21 @@ function getScrollBarWidth() {
 /*!******************************************!*\
   !*** ./source/js/modules/slider-base.js ***!
   \******************************************/
-/*! no exports provided */
+/*! exports provided: alignSlides, setFocusToVisibleSlides */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "alignSlides", function() { return alignSlides; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setFocusToVisibleSlides", function() { return setFocusToVisibleSlides; });
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 
 
 const WRAPPER_CLASS = `products-container--base`;
 const PRODUCTS_CONTAINER_CLASS = `products-container__inner`;
 const PRODUCTS_CLASS = `products`;
+const PRODUCT_CLASS = `products__item`;
+const LINKS_CLASS = `products__item > a`;
 const PAGINATION_CLASS = `pagination`;
 const TOGGLES_CLASS = `toggles`;
 const TOGGLE_ATTRIBUTE = `data-toggle`;
@@ -915,7 +925,6 @@ const TOGGLE_NEXT = `next`;
 const SLIDER_CLASS = `slider`;
 const SLIDER_MODIFIER = `slider--`;
 const SLIDES_CLASS = `slider__items`;
-const SLIDES_MODIFIER = `slider__items--base`;
 const SLIDE_BASE_CLASS = `slider__item`;
 const SLIDE_ACTIVE_CLASS = `slider__item--active`;
 const SLIDE_PREV_CLASS = `slider__item--prev`;
@@ -932,6 +941,8 @@ const SLIDER_TOGGLE_NEXT_CLASS = `slider__toggle--next`;
 const SLIDER_TOGGLE_DISABLED_CLASS = `slider__toggle--disabled`;
 const SLIDER_FRACTION_CURRENT_CLASS = `slider__fraction-current`;
 const SLIDER_FRACTION_TOTAL_CLASS = `slider__fraction-total`;
+const SLIDER_NOTIFICATION_CLASS = `slider__notification`;
+const SPACE_BETWEEN_SLIDES = 30;
 
 document.addEventListener(`DOMContentLoaded`, () => {
   const wrapper = document.querySelector(`.${WRAPPER_CLASS}`);
@@ -968,7 +979,6 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
     if (slidesContainer) {
       slidesContainer.classList.add(SLIDES_CLASS);
-      slidesContainer.classList.add(SLIDES_MODIFIER);
     }
 
     if (slides) {
@@ -999,7 +1009,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
   })();
 
   const slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](`.${SLIDER_CLASS}`, {
-    modules: [swiper__WEBPACK_IMPORTED_MODULE_0__["Navigation"], swiper__WEBPACK_IMPORTED_MODULE_0__["Pagination"], swiper__WEBPACK_IMPORTED_MODULE_0__["Keyboard"]],
+    modules: [swiper__WEBPACK_IMPORTED_MODULE_0__["Navigation"], swiper__WEBPACK_IMPORTED_MODULE_0__["Pagination"], swiper__WEBPACK_IMPORTED_MODULE_0__["Keyboard"], swiper__WEBPACK_IMPORTED_MODULE_0__["A11y"]],
     init: false,
     containerModifierClass: SLIDER_MODIFIER,
     wrapperClass: SLIDES_CLASS,
@@ -1020,6 +1030,9 @@ document.addEventListener(`DOMContentLoaded`, () => {
     },
     keyboard: {
       enabled: true
+    },
+    a11y: {
+      notificationClass: SLIDER_NOTIFICATION_CLASS
     },
     breakpoints: {
       320: {
@@ -1064,7 +1077,65 @@ document.addEventListener(`DOMContentLoaded`, () => {
   });
 
   slider.init();
+  slider.on(`slideChange`, alignSlides);
+  slider.on(`slideChange`, setFocusToVisibleSlides);
 });
+
+const container = document.querySelector(`.${PRODUCTS_CLASS}`);
+
+function checkCurrentTransition(selector) {
+  const condition = /[^\w\d()]\-?[\d]+/;
+  return Number(selector.style.transform.match(condition));
+}
+
+function alignSlides() {
+  let transformedValue = ``;
+
+  if (container) {
+    const containerWidth = container.clientWidth;
+    const currentTransitionValue = checkCurrentTransition(container);
+    const baseStep = -SPACE_BETWEEN_SLIDES;
+    let step = baseStep * (currentTransitionValue / containerWidth) * (-1);
+
+    if (currentTransitionValue === 0) {
+      step = 0;
+    }
+
+    transformedValue = container.style.transform = `translate3d(${currentTransitionValue + step}px, 0px, 0px)`;
+  }
+
+  return transformedValue;
+}
+
+function setFocusToVisibleSlides() {
+  const slide = container.querySelector(`.${PRODUCT_CLASS}`);
+  const productsLinks = Array.from(container.querySelectorAll(`.${LINKS_CLASS}`));
+  const containerWidth = container.clientWidth;
+  const containerHeight = container.clientHeight;
+  const slideWidth = slide.offsetWidth;
+  const slideHeight = slide.offsetHeight;
+  const slidesVisible = Math.floor(containerWidth / slideWidth) * Math.floor(containerHeight / slideHeight);
+  const currentTransitionValue = checkCurrentTransition(container);
+  let step = Math.floor(currentTransitionValue / containerWidth * (-1));
+
+  if (currentTransitionValue === 0) {
+    step = 1;
+  } else {
+    step++;
+  }
+
+  const startIndex = slidesVisible * step - slidesVisible;
+  const lastIndex = slidesVisible * step;
+
+  for (let i = 0; i < productsLinks.length; i++) {
+    productsLinks[i].tabIndex = -1;
+    if (i >= startIndex && i < lastIndex) {
+      productsLinks[i].tabIndex = 0;
+    }
+  }
+}
+
+setFocusToVisibleSlides();
 
 
 /***/ }),
@@ -1079,6 +1150,8 @@ document.addEventListener(`DOMContentLoaded`, () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
+/* harmony import */ var _slider_base_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./slider-base.js */ "./source/js/modules/slider-base.js");
+
 
 
 const WRAPPER_CLASS = `products-container--catalog`;
@@ -1109,6 +1182,7 @@ const SLIDER_TOGGLE_BASE_CLASS = `slider__toggle`;
 const SLIDER_TOGGLE_PREV_CLASS = `slider__toggle--prev`;
 const SLIDER_TOGGLE_NEXT_CLASS = `slider__toggle--next`;
 const SLIDER_TOGGLE_DISABLED_CLASS = `slider__toggle--disabled`;
+const SLIDER_NOTIFICATION_CLASS = `slider__notification`;
 
 document.addEventListener(`DOMContentLoaded`, () => {
   const wrapper = document.querySelector(`.${WRAPPER_CLASS}`);
@@ -1177,7 +1251,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
   })();
 
   const slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](`.${SLIDER_CLASS}`, {
-    modules: [swiper__WEBPACK_IMPORTED_MODULE_0__["Navigation"], swiper__WEBPACK_IMPORTED_MODULE_0__["Pagination"], swiper__WEBPACK_IMPORTED_MODULE_0__["Grid"], swiper__WEBPACK_IMPORTED_MODULE_0__["Keyboard"]],
+    modules: [swiper__WEBPACK_IMPORTED_MODULE_0__["Navigation"], swiper__WEBPACK_IMPORTED_MODULE_0__["Pagination"], swiper__WEBPACK_IMPORTED_MODULE_0__["Keyboard"], swiper__WEBPACK_IMPORTED_MODULE_0__["A11y"]],
     init: false,
     containerModifierClass: SLIDER_MODIFIER,
     wrapperClass: SLIDES_CLASS,
@@ -1185,6 +1259,8 @@ document.addEventListener(`DOMContentLoaded`, () => {
     slideActiveClass: SLIDE_ACTIVE_CLASS,
     slidePrevClass: SLIDE_PREV_CLASS,
     slideNextClass: SLIDE_NEXT_CLASS,
+    slidesPerView: 1,
+    slidesPerGroup: 1,
     navigation: {
       prevEl: `.${SLIDER_TOGGLE_PREV_CLASS}`,
       nextEl: `.${SLIDER_TOGGLE_NEXT_CLASS}`,
@@ -1206,25 +1282,14 @@ document.addEventListener(`DOMContentLoaded`, () => {
     keyboard: {
       enabled: true
     },
-    breakpoints: {
-      320: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-        grid: {
-          rows: 6
-        }
-      },
-      768: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-        grid: {
-          rows: 4
-        }
-      }
-    }
+    a11y: {
+      notificationClass: SLIDER_NOTIFICATION_CLASS
+    },
   });
 
   slider.init();
+  slider.on(`slideChange`, _slider_base_js__WEBPACK_IMPORTED_MODULE_1__["alignSlides"]);
+  slider.on(`slideChange`, _slider_base_js__WEBPACK_IMPORTED_MODULE_1__["setFocusToVisibleSlides"]);
 });
 
 
