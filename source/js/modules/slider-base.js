@@ -1,8 +1,10 @@
-import Swiper, {Navigation, Pagination, Keyboard} from 'swiper';
+import Swiper, {A11y, Keyboard, Navigation, Pagination} from 'swiper';
 
 const WRAPPER_CLASS = `products-container--base`;
 const PRODUCTS_CONTAINER_CLASS = `products-container__inner`;
 const PRODUCTS_CLASS = `products`;
+const PRODUCT_CLASS = `products__item`;
+const LINKS_CLASS = `products__item > a`;
 const PAGINATION_CLASS = `pagination`;
 const TOGGLES_CLASS = `toggles`;
 const TOGGLE_ATTRIBUTE = `data-toggle`;
@@ -12,7 +14,6 @@ const TOGGLE_NEXT = `next`;
 const SLIDER_CLASS = `slider`;
 const SLIDER_MODIFIER = `slider--`;
 const SLIDES_CLASS = `slider__items`;
-const SLIDES_MODIFIER = `slider__items--base`;
 const SLIDE_BASE_CLASS = `slider__item`;
 const SLIDE_ACTIVE_CLASS = `slider__item--active`;
 const SLIDE_PREV_CLASS = `slider__item--prev`;
@@ -29,6 +30,8 @@ const SLIDER_TOGGLE_NEXT_CLASS = `slider__toggle--next`;
 const SLIDER_TOGGLE_DISABLED_CLASS = `slider__toggle--disabled`;
 const SLIDER_FRACTION_CURRENT_CLASS = `slider__fraction-current`;
 const SLIDER_FRACTION_TOTAL_CLASS = `slider__fraction-total`;
+const SLIDER_NOTIFICATION_CLASS = `slider__notification`;
+const SPACE_BETWEEN_SLIDES = 30;
 
 document.addEventListener(`DOMContentLoaded`, () => {
   const wrapper = document.querySelector(`.${WRAPPER_CLASS}`);
@@ -65,7 +68,6 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
     if (slidesContainer) {
       slidesContainer.classList.add(SLIDES_CLASS);
-      slidesContainer.classList.add(SLIDES_MODIFIER);
     }
 
     if (slides) {
@@ -96,7 +98,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
   })();
 
   const slider = new Swiper(`.${SLIDER_CLASS}`, {
-    modules: [Navigation, Pagination, Keyboard],
+    modules: [Navigation, Pagination, Keyboard, A11y],
     init: false,
     containerModifierClass: SLIDER_MODIFIER,
     wrapperClass: SLIDES_CLASS,
@@ -117,6 +119,9 @@ document.addEventListener(`DOMContentLoaded`, () => {
     },
     keyboard: {
       enabled: true
+    },
+    a11y: {
+      notificationClass: SLIDER_NOTIFICATION_CLASS
     },
     breakpoints: {
       320: {
@@ -161,4 +166,62 @@ document.addEventListener(`DOMContentLoaded`, () => {
   });
 
   slider.init();
+  slider.on(`slideChange`, alignSlides);
+  slider.on(`slideChange`, setFocusToVisibleSlides);
 });
+
+const container = document.querySelector(`.${PRODUCTS_CLASS}`);
+
+function checkCurrentTransition(selector) {
+  const condition = /[^\w\d()]\-?[\d]+/;
+  return Number(selector.style.transform.match(condition));
+}
+
+export function alignSlides() {
+  let transformedValue = ``;
+
+  if (container) {
+    const containerWidth = container.clientWidth;
+    const currentTransitionValue = checkCurrentTransition(container);
+    const baseStep = -SPACE_BETWEEN_SLIDES;
+    let step = baseStep * (currentTransitionValue / containerWidth) * (-1);
+
+    if (currentTransitionValue === 0) {
+      step = 0;
+    }
+
+    transformedValue = container.style.transform = `translate3d(${currentTransitionValue + step}px, 0px, 0px)`;
+  }
+
+  return transformedValue;
+}
+
+export function setFocusToVisibleSlides() {
+  const slide = container.querySelector(`.${PRODUCT_CLASS}`);
+  const productsLinks = Array.from(container.querySelectorAll(`.${LINKS_CLASS}`));
+  const containerWidth = container.clientWidth;
+  const containerHeight = container.clientHeight;
+  const slideWidth = slide.offsetWidth;
+  const slideHeight = slide.offsetHeight;
+  const slidesVisible = Math.floor(containerWidth / slideWidth) * Math.floor(containerHeight / slideHeight);
+  const currentTransitionValue = checkCurrentTransition(container);
+  let step = Math.floor(currentTransitionValue / containerWidth * (-1));
+
+  if (currentTransitionValue === 0) {
+    step = 1;
+  } else {
+    step++;
+  }
+
+  const startIndex = slidesVisible * step - slidesVisible;
+  const lastIndex = slidesVisible * step;
+
+  for (let i = 0; i < productsLinks.length; i++) {
+    productsLinks[i].tabIndex = -1;
+    if (i >= startIndex && i < lastIndex) {
+      productsLinks[i].tabIndex = 0;
+    }
+  }
+}
+
+setFocusToVisibleSlides();

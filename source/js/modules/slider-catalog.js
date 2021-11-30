@@ -1,4 +1,5 @@
-import Swiper, {Navigation, Pagination, Grid, Keyboard} from 'swiper';
+import Swiper, {Navigation, Pagination, Keyboard, A11y} from 'swiper';
+import {alignSlides, setFocusToVisibleSlides} from './slider-base.js';
 
 const WRAPPER_CLASS = `products-container--catalog`;
 const PRODUCTS_CONTAINER_CLASS = `products-container__inner`;
@@ -28,6 +29,7 @@ const SLIDER_TOGGLE_BASE_CLASS = `slider__toggle`;
 const SLIDER_TOGGLE_PREV_CLASS = `slider__toggle--prev`;
 const SLIDER_TOGGLE_NEXT_CLASS = `slider__toggle--next`;
 const SLIDER_TOGGLE_DISABLED_CLASS = `slider__toggle--disabled`;
+const SLIDER_NOTIFICATION_CLASS = `slider__notification`;
 
 document.addEventListener(`DOMContentLoaded`, () => {
   const wrapper = document.querySelector(`.${WRAPPER_CLASS}`);
@@ -96,7 +98,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
   })();
 
   const slider = new Swiper(`.${SLIDER_CLASS}`, {
-    modules: [Navigation, Pagination, Grid, Keyboard],
+    modules: [Navigation, Pagination, Keyboard, A11y],
     init: false,
     containerModifierClass: SLIDER_MODIFIER,
     wrapperClass: SLIDES_CLASS,
@@ -104,6 +106,8 @@ document.addEventListener(`DOMContentLoaded`, () => {
     slideActiveClass: SLIDE_ACTIVE_CLASS,
     slidePrevClass: SLIDE_PREV_CLASS,
     slideNextClass: SLIDE_NEXT_CLASS,
+    slidesPerView: 1,
+    slidesPerGroup: 1,
     navigation: {
       prevEl: `.${SLIDER_TOGGLE_PREV_CLASS}`,
       nextEl: `.${SLIDER_TOGGLE_NEXT_CLASS}`,
@@ -125,23 +129,12 @@ document.addEventListener(`DOMContentLoaded`, () => {
     keyboard: {
       enabled: true
     },
-    breakpoints: {
-      320: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-        grid: {
-          rows: 6
-        }
-      },
-      768: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-        grid: {
-          rows: 4
-        }
-      }
-    }
+    a11y: {
+      notificationClass: SLIDER_NOTIFICATION_CLASS
+    },
   });
 
   slider.init();
+  slider.on(`slideChange`, alignSlides);
+  slider.on(`slideChange`, setFocusToVisibleSlides);
 });

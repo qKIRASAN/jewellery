@@ -12,6 +12,7 @@
     position: fixed;
     top: 0;
     left: 0;
+    background-color: rgba($popup-background, 0.7);
     z-index: $z-index-popup;
     overflow-y: auto;
   }

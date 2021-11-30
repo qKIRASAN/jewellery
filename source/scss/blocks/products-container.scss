@@ -20,10 +20,11 @@
 
   &--catalog {
     padding-top: 0;
-    max-width: 100%;
 
     @media (max-width: $large) {
+      margin: auto;
       padding-bottom: 34px;
+      max-width: 870px;
     }
   }
 }
